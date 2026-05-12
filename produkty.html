@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>🏆 Top produkty — Prema (i-prema.de)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+<style>
+:root {
+  --brand: #1565C0; --brand-dark: #0d3d6b; --brand-light: #90c2ed;
+  --b2b: #FB8C00; --b2c: #2E7D32; --danger: #c62828;
+  --bg: #f5f7fa; --card: #fff; --text: #1a1a2e; --muted: #5c6470;
+  --border: #e2e5ed;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.5; }
+.container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+header { background: #fff; border-bottom: 3px solid var(--brand);
+  padding: 24px 20px; margin-bottom: 24px;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+header .logo { max-height: 60px; }
+header h1 { font-size: 22px; font-weight: 700; color: var(--brand-dark); }
+header .meta { text-align: right; font-size: 13px; color: var(--muted); }
+nav.subnav { background: #fff; padding: 12px 20px; margin-bottom: 20px;
+  border-bottom: 1px solid var(--border); display: flex; gap: 14px; flex-wrap: wrap; }
+nav.subnav a { font-size: 13px; color: var(--muted); text-decoration: none;
+  padding: 4px 8px; border-radius: 3px; transition: all .15s; }
+nav.subnav a:hover { color: var(--brand); background: var(--brand-light); }
+nav.subnav a.active { color: #fff; background: var(--brand); font-weight: 600; }
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px; margin-bottom: 24px; }
+.kpi { background: var(--card); padding: 18px; border-left: 4px solid var(--brand);
+  box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+.kpi .label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.kpi .value { font-size: 24px; font-weight: 700; margin-top: 4px; color: var(--brand-dark); }
+.kpi .detail { font-size: 12px; color: var(--muted); margin-top: 4px; }
+section { background: var(--card); padding: 24px; margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+section h2 { font-size: 18px; font-weight: 700; color: var(--brand-dark); margin-bottom: 16px;
+  padding-bottom: 8px; border-bottom: 2px solid var(--border); }
+section h3 { font-size: 14px; font-weight: 600; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: var(--brand); color: #fff; padding: 8px 10px; text-align: left; font-weight: 600; }
+td { padding: 8px 10px; border-bottom: 1px solid var(--border); }
+tr:hover td { background: #f9fafb; }
+.b2b { color: var(--b2b); font-weight: 600; }
+.b2c { color: var(--b2c); font-weight: 600; }
+.danger { color: var(--danger); font-weight: 600; }
+.tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+.tag.b2b { background: #fff3e0; color: #e65100; }
+.tag.b2c { background: #e8f5e9; color: #1b5e20; }
+.muted { color: var(--muted); font-size: 12px; }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 800px) { .split { grid-template-columns: 1fr; } }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div style="display:flex; align-items:center; gap:16px;">
+    <img src="https://cdn.myshoptet.com/usr/www.i-prema.de/user/logos/logo_prema-5.png" alt="Prema logo" class="logo">
+    <div>
+      <h1>🏆 Top produkty</h1>
+      <div class="muted">i-prema.de · 12. 5. 2025 → 11. 5. 2026</div>
+    </div>
+  </div>
+  <div class="meta">Část reporting hubu &middot; <a href="index.html" style="color: var(--brand);">Přehled →</a></div>
+</header>
+<nav class="subnav">
+  <a href="index.html">📦 Orders přehled</a>
+  <a href="storna.html">⛔ Storna & failed</a>
+  <a href="b2b.html">🏢 B2B detail</a>
+  <a href="produkty.html">🏆 Top produkty</a>
+  <a href="geografie.html">🗺️ Geografie</a>
+  <a href="mapa_bundeslander.html">🇩🇪 Mapa Bundesländer</a>
+</nav>
+
+<section>
+  <h2>🏆 Klíčové ukazatele — produkty</h2>
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="label">Unikátních SKU prodáno</div>
+      <div class="value">1 472</div>
+      <div class="detail">232 773 kusů celkem</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Prům. kusů per obj.</div>
+      <div class="value">50.4</div>
+      <div class="detail">medián 10  max 2631</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Top 50 SKU</div>
+      <div class="value">46 %</div>
+      <div class="detail">dělají 46 % všech prodaných kusů</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Top 10 SKU</div>
+      <div class="value">18 %</div>
+      <div class="detail">Pareto: úzká špička drží objem</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>📦 Distribuce kusů per objednávka</h2>
+  <div id="ks_dist_chart" style="height: 300px;"></div>
+</section>
+
+<section>
+  <h2>🥇 Top 50 produktů</h2>
+  <table>
+    <thead><tr><th>#</th><th>Produkt</th><th>Kusů</th><th>Objednávek</th><th>Obrat (EUR)</th><th>B2B %</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Heizkörperwalze Schaumstoff</td><td>7 835</td><td>39</td><td>865</td><td><span class="tag b2b">98 %</span></td></tr>
+      <tr><td>2</td><td>Heizkörperwalze Velour</td><td>5 477</td><td>94</td><td>447</td><td><span class="tag b2b">89 %</span></td></tr>
+      <tr><td>3</td><td>Maler-Flachkrepp Askon</td><td>4 586</td><td>42</td><td>880</td><td><span class="tag ">57 %</span></td></tr>
+      <tr><td>4</td><td>Goldband HIT</td><td>4 281</td><td>113</td><td>1 630</td><td><span class="tag ">49 %</span></td></tr>
+      <tr><td>5</td><td>Heizkörperwalze Deluxe</td><td>4 247</td><td>185</td><td>484</td><td><span class="tag ">47 %</span></td></tr>
+      <tr><td>6</td><td>Farbeimer oval  ohne Deckel</td><td>3 905</td><td>164</td><td>2 339</td><td><span class="tag ">51 %</span></td></tr>
+      <tr><td>7</td><td>Farbeimer oval  ohne Deckel</td><td>3 862</td><td>163</td><td>1 073</td><td><span class="tag b2b">62 %</span></td></tr>
+      <tr><td>8</td><td>Maler-Flachkrepp Askon</td><td>3 081</td><td>93</td><td>729</td><td><span class="tag ">55 %</span></td></tr>
+      <tr><td>9</td><td>Goldband Askon</td><td>2 883</td><td>99</td><td>1 572</td><td><span class="tag ">57 %</span></td></tr>
+      <tr><td>10</td><td>Goldband HIT</td><td>2 780</td><td>68</td><td>904</td><td><span class="tag ">38 %</span></td></tr>
+      <tr><td>11</td><td>Maler-Flachkrepp Askon</td><td>2 729</td><td>91</td><td>1 215</td><td><span class="tag ">41 %</span></td></tr>
+      <tr><td>12</td><td>Heizkörperwalze Magic</td><td>2 646</td><td>74</td><td>259</td><td><span class="tag b2c">24 %</span></td></tr>
+      <tr><td>13</td><td>Cover Quick Gold / UV</td><td>2 506</td><td>93</td><td>1 217</td><td><span class="tag ">49 %</span></td></tr>
+      <tr><td>14</td><td>Farbeimer oval  ohne Deckel</td><td>2 376</td><td>120</td><td>1 498</td><td><span class="tag ">42 %</span></td></tr>
+      <tr><td>15</td><td>Mischbecher mit Skala</td><td>2 359</td><td>49</td><td>198</td><td><span class="tag b2b">92 %</span></td></tr>
+      <tr><td>16</td><td>Lackwanne</td><td>2 322</td><td>57</td><td>323</td><td><span class="tag b2b">87 %</span></td></tr>
+      <tr><td>17</td><td>Nylon-Handschuhe weiß</td><td>2 289</td><td>81</td><td>290</td><td><span class="tag ">41 %</span></td></tr>
+      <tr><td>18</td><td>Heizkörperpinsel hell  ASKON</td><td>2 181</td><td>106</td><td>658</td><td><span class="tag ">56 %</span></td></tr>
+      <tr><td>19</td><td>Cover Quick Gold / UV</td><td>2 027</td><td>82</td><td>1 323</td><td><span class="tag ">46 %</span></td></tr>
+      <tr><td>20</td><td>Nylon-Handschuhe weiß</td><td>2 027</td><td>66</td><td>259</td><td><span class="tag ">42 %</span></td></tr>
+      <tr><td>21</td><td>Ersatzklingen Lutz TiN  18 mm</td><td>1 824</td><td>98</td><td>953</td><td><span class="tag b2b">72 %</span></td></tr>
+      <tr><td>22</td><td>Nylon-Handschuhe weiß</td><td>1 808</td><td>60</td><td>230</td><td><span class="tag ">55 %</span></td></tr>
+      <tr><td>23</td><td>Profi Feinkrepp Klebeband</td><td>1 772</td><td>21</td><td>506</td><td><span class="tag b2b">82 %</span></td></tr>
+      <tr><td>24</td><td>Abstreifgitter Metall</td><td>1 768</td><td>130</td><td>539</td><td><span class="tag b2b">67 %</span></td></tr>
+      <tr><td>25</td><td>Cuttermesser - Ersatzklingen Lutz</td><td>1 756</td><td>72</td><td>615</td><td><span class="tag ">38 %</span></td></tr>
+      <tr><td>26</td><td>Cuttermesser - Ersatzklingen Import</td><td>1 736</td><td>41</td><td>263</td><td><span class="tag ">45 %</span></td></tr>
+      <tr><td>27</td><td>Flachpinsel M5</td><td>1 628</td><td>29</td><td>416</td><td><span class="tag b2b">98 %</span></td></tr>
+      <tr><td>28</td><td>Gold Klebeband Eco</td><td>1 617</td><td>82</td><td>491</td><td><span class="tag b2b">72 %</span></td></tr>
+      <tr><td>29</td><td>Profi Feinkrepp Klebeband</td><td>1 508</td><td>33</td><td>688</td><td><span class="tag b2b">76 %</span></td></tr>
+      <tr><td>30</td><td>Goldband Askon</td><td>1 459</td><td>56</td><td>690</td><td><span class="tag b2b">67 %</span></td></tr>
+      <tr><td>31</td><td>Bügel für 10 cm Walzen</td><td>1 431</td><td>138</td><td>212</td><td><span class="tag ">35 %</span></td></tr>
+      <tr><td>32</td><td>Heizkörperwalze RotaGold - Goldfaden</td><td>1 412</td><td>62</td><td>138</td><td><span class="tag b2b">62 %</span></td></tr>
+      <tr><td>33</td><td>Heizkörperwalze Schaumstoff</td><td>1 403</td><td>37</td><td>114</td><td><span class="tag ">48 %</span></td></tr>
+      <tr><td>34</td><td>Padschwamm mit Griff</td><td>1 375</td><td>44</td><td>112</td><td><span class="tag b2c">17 %</span></td></tr>
+      <tr><td>35</td><td>Goldband Askon</td><td>1 374</td><td>64</td><td>1 262</td><td><span class="tag b2b">89 %</span></td></tr>
+      <tr><td>36</td><td>Heizkörperwalze Blaugold</td><td>1 358</td><td>38</td><td>122</td><td><span class="tag ">50 %</span></td></tr>
+      <tr><td>37</td><td>Heizkörperwalze Tripple red</td><td>1 303</td><td>37</td><td>143</td><td><span class="tag ">43 %</span></td></tr>
+      <tr><td>38</td><td>Atemschutzmaske Profi- FFP2</td><td>1 295</td><td>9</td><td>181</td><td><span class="tag b2c">2 %</span></td></tr>
+      <tr><td>39</td><td>Padschwamm mit Griff</td><td>1 213</td><td>28</td><td>102</td><td><span class="tag b2c">25 %</span></td></tr>
+      <tr><td>40</td><td>Plattpinsel Askon  gebogen</td><td>1 165</td><td>76</td><td>272</td><td><span class="tag ">32 %</span></td></tr>
+      <tr><td>41</td><td>Maler-Flachkrepp Askon</td><td>1 156</td><td>52</td><td>362</td><td><span class="tag ">49 %</span></td></tr>
+      <tr><td>42</td><td>Viskose - Quellschwamm</td><td>1 155</td><td>34</td><td>379</td><td><span class="tag ">58 %</span></td></tr>
+      <tr><td>43</td><td>Cover Quick PP</td><td>1 147</td><td>33</td><td>280</td><td><span class="tag b2b">65 %</span></td></tr>
+      <tr><td>44</td><td>Malerringpinsel Profi</td><td>1 126</td><td>91</td><td>969</td><td><span class="tag ">34 %</span></td></tr>
+      <tr><td>45</td><td>Abdeckplane</td><td>1 109</td><td>51</td><td>201</td><td><span class="tag ">54 %</span></td></tr>
+      <tr><td>46</td><td>Flachpinsel M5</td><td>1 105</td><td>12</td><td>241</td><td><span class="tag b2b">100 %</span></td></tr>
+      <tr><td>47</td><td>Bügel für 10 cm Walzen</td><td>1 100</td><td>79</td><td>154</td><td><span class="tag b2b">86 %</span></td></tr>
+      <tr><td>48</td><td>Lackierwalze Mikrofaser</td><td>1 080</td><td>34</td><td>103</td><td><span class="tag ">36 %</span></td></tr>
+      <tr><td>49</td><td>Cuttermesser P18</td><td>1 044</td><td>15</td><td>83</td><td><span class="tag b2b">97 %</span></td></tr>
+      <tr><td>50</td><td>Cover Quick Folie / Krepp</td><td>1 040</td><td>34</td><td>607</td><td><span class="tag b2c">9 %</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>🛒 Top 15 produktových párů (co se kupuje společně)</h2>
+  <table>
+    <thead><tr><th>#</th><th>Produkt A</th><th>Produkt B</th><th>Spolu v obj.</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Deckel für Farbeimer oval</td><td>Farbeimer oval, ohne Deckel</td><td><b>106</b></td></tr>
+      <tr><td>2</td><td>Bügel für 10 cm Walzen</td><td>Bügel für 18, oder 25 cm Walzen</td><td><b>94</b></td></tr>
+      <tr><td>3</td><td>Hartkernwalze Deluxe, 21 mm</td><td>Heizkörperwalze Deluxe</td><td><b>60</b></td></tr>
+      <tr><td>4</td><td>Bügel für 10 cm Walzen</td><td>Plattpinsel Askon, gebogen</td><td><b>57</b></td></tr>
+      <tr><td>5</td><td>Malerringpinsel Profi</td><td>Plattpinsel Askon, gebogen</td><td><b>56</b></td></tr>
+      <tr><td>6</td><td>Bügel für 18, oder 25 cm Walzen</td><td>Plattpinsel Askon, gebogen</td><td><b>56</b></td></tr>
+      <tr><td>7</td><td>Bügel für 18, oder 25 cm Walzen</td><td>Hartkernwalze Deluxe, 21 mm</td><td><b>53</b></td></tr>
+      <tr><td>8</td><td>Goldband HIT</td><td>Maler-Flachkrepp Askon</td><td><b>52</b></td></tr>
+      <tr><td>9</td><td>Bügel für 10 cm Walzen</td><td>Heizkörperwalze Deluxe</td><td><b>50</b></td></tr>
+      <tr><td>10</td><td>Bügel für 18, oder 25 cm Walzen</td><td>Heizkörperwalze Deluxe</td><td><b>50</b></td></tr>
+      <tr><td>11</td><td>Bügel für 10 cm Walzen</td><td>Malerringpinsel Profi</td><td><b>47</b></td></tr>
+      <tr><td>12</td><td>Latexhandschuhe - Select Black</td><td>ohne Zugabe</td><td><b>46</b></td></tr>
+      <tr><td>13</td><td>Farbeimer oval, ohne Deckel</td><td>ohne Zugabe</td><td><b>43</b></td></tr>
+      <tr><td>14</td><td>Bügel für 18, oder 25 cm Walzen</td><td>Malerringpinsel Profi</td><td><b>42</b></td></tr>
+      <tr><td>15</td><td>Bügel für 10 cm Walzen</td><td>Lackwanne</td><td><b>42</b></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>🎨 Top 20 variant</h2>
+  <table>
+    <thead><tr><th>#</th><th>Varianta</th><th>Kusů</th><th>Objednávek</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Breite: 10 cm  Durchmesser Kern: 17 mm  für Bügel: 6 mm</td><td>18 377</td><td>435</td></tr>
+      <tr><td>2</td><td>Breite: 50 mm</td><td>17 386</td><td>841</td></tr>
+      <tr><td>3</td><td>Breite: 30 mm</td><td>16 462</td><td>490</td></tr>
+      <tr><td>4</td><td>Breite: 25 mm</td><td>13 594</td><td>439</td></tr>
+      <tr><td>5</td><td>Breite: 10 cm  Ausführung: beidseitig gerundet</td><td>7 913</td><td>50</td></tr>
+      <tr><td>6</td><td>Abmessungen Klinge: 18 mm</td><td>6 158</td><td>212</td></tr>
+      <tr><td>7</td><td>Breite: 55 cm</td><td>4 927</td><td>214</td></tr>
+      <tr><td>8</td><td>Breite: 38 mm</td><td>4 922</td><td>194</td></tr>
+      <tr><td>9</td><td>Größe: 9 (XL)</td><td>4 594</td><td>178</td></tr>
+      <tr><td>10</td><td>Größe: 10 (XXL)</td><td>4 514</td><td>159</td></tr>
+      <tr><td>11</td><td>Breite: 60 mm</td><td>4 163</td><td>327</td></tr>
+      <tr><td>12</td><td>Größe: 15 Liter</td><td>3 905</td><td>164</td></tr>
+      <tr><td>13</td><td>Breite: 140 cm</td><td>3 901</td><td>186</td></tr>
+      <tr><td>14</td><td>Größe: 5 5 Liter</td><td>3 866</td><td>165</td></tr>
+      <tr><td>15</td><td>Breite: 35 mm</td><td>2 801</td><td>197</td></tr>
+      <tr><td>16</td><td>Gebinde: 550 ml</td><td>2 760</td><td>49</td></tr>
+      <tr><td>17</td><td>Breite: 25 cm</td><td>2 492</td><td>295</td></tr>
+      <tr><td>18</td><td>Breite: 20 mm</td><td>2 453</td><td>168</td></tr>
+      <tr><td>19</td><td>Größe: 8 (L)</td><td>2 452</td><td>101</td></tr>
+      <tr><td>20</td><td>Größe: 18 Liter</td><td>2 384</td><td>121</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer>
+  Generováno 12. 5. 2026 16:27 &middot;
+  Data: Shoptet DE export &middot; GDPR anonymizováno
+</footer>
+</div>
+<script>
+
+const KS = [{"bucket": "1-2", "count": 1180}, {"bucket": "3-5", "count": 650}, {"bucket": "6-10", "count": 490}, {"bucket": "11-20", "count": 489}, {"bucket": "21-50", "count": 645}, {"bucket": "50+", "count": 1163}];
+Plotly.newPlot("ks_dist_chart", [
+  { x: KS.map(d => d.bucket), y: KS.map(d => d.count), type: "bar",
+     marker: { color: "#1565C0" }, text: KS.map(d => d.count), textposition: "auto" }
+], { paper_bgcolor: "#fff", plot_bgcolor: "#f8f9fa",
+      font: { family: "Inter, Arial", size: 12 },
+      xaxis: { title: "Kusů v objednávce" },
+      yaxis: { title: "Počet objednávek" } }, { responsive: true });
+
+</script>
+</body></html>

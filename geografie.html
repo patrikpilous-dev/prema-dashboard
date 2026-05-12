@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>🗺️ Geografie — Prema (i-prema.de)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+<style>
+:root {
+  --brand: #1565C0; --brand-dark: #0d3d6b; --brand-light: #90c2ed;
+  --b2b: #FB8C00; --b2c: #2E7D32; --danger: #c62828;
+  --bg: #f5f7fa; --card: #fff; --text: #1a1a2e; --muted: #5c6470;
+  --border: #e2e5ed;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.5; }
+.container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+header { background: #fff; border-bottom: 3px solid var(--brand);
+  padding: 24px 20px; margin-bottom: 24px;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+header .logo { max-height: 60px; }
+header h1 { font-size: 22px; font-weight: 700; color: var(--brand-dark); }
+header .meta { text-align: right; font-size: 13px; color: var(--muted); }
+nav.subnav { background: #fff; padding: 12px 20px; margin-bottom: 20px;
+  border-bottom: 1px solid var(--border); display: flex; gap: 14px; flex-wrap: wrap; }
+nav.subnav a { font-size: 13px; color: var(--muted); text-decoration: none;
+  padding: 4px 8px; border-radius: 3px; transition: all .15s; }
+nav.subnav a:hover { color: var(--brand); background: var(--brand-light); }
+nav.subnav a.active { color: #fff; background: var(--brand); font-weight: 600; }
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px; margin-bottom: 24px; }
+.kpi { background: var(--card); padding: 18px; border-left: 4px solid var(--brand);
+  box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+.kpi .label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.kpi .value { font-size: 24px; font-weight: 700; margin-top: 4px; color: var(--brand-dark); }
+.kpi .detail { font-size: 12px; color: var(--muted); margin-top: 4px; }
+section { background: var(--card); padding: 24px; margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+section h2 { font-size: 18px; font-weight: 700; color: var(--brand-dark); margin-bottom: 16px;
+  padding-bottom: 8px; border-bottom: 2px solid var(--border); }
+section h3 { font-size: 14px; font-weight: 600; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: var(--brand); color: #fff; padding: 8px 10px; text-align: left; font-weight: 600; }
+td { padding: 8px 10px; border-bottom: 1px solid var(--border); }
+tr:hover td { background: #f9fafb; }
+.b2b { color: var(--b2b); font-weight: 600; }
+.b2c { color: var(--b2c); font-weight: 600; }
+.danger { color: var(--danger); font-weight: 600; }
+.tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+.tag.b2b { background: #fff3e0; color: #e65100; }
+.tag.b2c { background: #e8f5e9; color: #1b5e20; }
+.muted { color: var(--muted); font-size: 12px; }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 800px) { .split { grid-template-columns: 1fr; } }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div style="display:flex; align-items:center; gap:16px;">
+    <img src="https://cdn.myshoptet.com/usr/www.i-prema.de/user/logos/logo_prema-5.png" alt="Prema logo" class="logo">
+    <div>
+      <h1>🗺️ Geografie</h1>
+      <div class="muted">i-prema.de · 12. 5. 2025 → 11. 5. 2026</div>
+    </div>
+  </div>
+  <div class="meta">Část reporting hubu &middot; <a href="index.html" style="color: var(--brand);">Přehled →</a></div>
+</header>
+<nav class="subnav">
+  <a href="index.html">📦 Orders přehled</a>
+  <a href="storna.html">⛔ Storna & failed</a>
+  <a href="b2b.html">🏢 B2B detail</a>
+  <a href="produkty.html">🏆 Top produkty</a>
+  <a href="geografie.html">🗺️ Geografie</a>
+  <a href="mapa_bundeslander.html">🇩🇪 Mapa Bundesländer</a>
+</nav>
+
+<section>
+  <h2>🗺️ Geografie objednávek</h2>
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="label">DE objednávek</div>
+      <div class="value">4 592</div>
+      <div class="detail">99.4 % všech valid obj.</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Non-DE obj.</div>
+      <div class="value">27</div>
+      <div class="detail">5 zemí (AT  CZ  BE  LU  NL…)</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Unikátní DE města</div>
+      <div class="value">2 020</div>
+      <div class="detail">průměrně 2.3 obj./město</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Aktivních PLZ-Leitzahl</div>
+      <div class="value">96</div>
+      <div class="detail">z 95 možných (00-99) — pokrytí trhu</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>🇩🇪 Mapa spolkových zemí (Bundesländer)</h2>
+  <p class="muted" style="margin-bottom: 12px;">Plná mapa s 4 vrstvami (objednávky / obrat / B2B / B2C):</p>
+  <p><a href="mapa_bundeslander.html" style="color: var(--brand); font-weight: 600;">Otevřít mapu Bundesländer →</a></p>
+</section>
+
+<section>
+  <h2>🏙️ Top 50 měst DE</h2>
+  <table>
+    <thead><tr><th>#</th><th>Město</th><th>Obj.</th><th>Unikátní zákazníci</th><th>Obj/zák.</th><th>Obrat (EUR)</th><th>B2B</th><th>B2C</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><b>Berlin</b></td><td>206</td><td>123</td><td>1.67</td><td>30 865</td><td class="b2b">84</td><td class="b2c">122</td></tr>
+      <tr><td>2</td><td><b>München</b></td><td>59</td><td>45</td><td>1.31</td><td>6 457</td><td class="b2b">31</td><td class="b2c">28</td></tr>
+      <tr><td>3</td><td><b>Selb</b></td><td>57</td><td>17</td><td>3.35</td><td>8 381</td><td class="b2b">36</td><td class="b2c">21</td></tr>
+      <tr><td>4</td><td><b>Hamburg</b></td><td>54</td><td>47</td><td>1.15</td><td>7 710</td><td class="b2b">18</td><td class="b2c">36</td></tr>
+      <tr><td>5</td><td><b>Papenburg</b></td><td>48</td><td>14</td><td>3.43</td><td>14 715</td><td class="b2b">1</td><td class="b2c">47</td></tr>
+      <tr><td>6</td><td><b>Friesoythe</b></td><td>41</td><td>8</td><td>5.12</td><td>12 748</td><td class="b2b">1</td><td class="b2c">40</td></tr>
+      <tr><td>7</td><td><b>Essen</b></td><td>40</td><td>17</td><td>2.35</td><td>4 681</td><td class="b2b">25</td><td class="b2c">15</td></tr>
+      <tr><td>8</td><td><b>Esche</b></td><td>37</td><td>1</td><td>37.00</td><td>13 034</td><td class="b2b">37</td><td class="b2c">0</td></tr>
+      <tr><td>9</td><td><b>Köln</b></td><td>36</td><td>25</td><td>1.44</td><td>4 948</td><td class="b2b">14</td><td class="b2c">22</td></tr>
+      <tr><td>10</td><td><b>Lingen</b></td><td>35</td><td>7</td><td>5.00</td><td>13 079</td><td class="b2b">2</td><td class="b2c">33</td></tr>
+      <tr><td>11</td><td><b>Achim</b></td><td>32</td><td>3</td><td>10.67</td><td>5 560</td><td class="b2b">1</td><td class="b2c">31</td></tr>
+      <tr><td>12</td><td><b>Schönwald</b></td><td>30</td><td>7</td><td>4.29</td><td>6 019</td><td class="b2b">28</td><td class="b2c">2</td></tr>
+      <tr><td>13</td><td><b>Prenzlau</b></td><td>26</td><td>6</td><td>4.33</td><td>9 167</td><td class="b2b">25</td><td class="b2c">1</td></tr>
+      <tr><td>14</td><td><b>Münster</b></td><td>25</td><td>7</td><td>3.57</td><td>17 528</td><td class="b2b">3</td><td class="b2c">22</td></tr>
+      <tr><td>15</td><td><b>Bremen</b></td><td>24</td><td>13</td><td>1.85</td><td>3 629</td><td class="b2b">14</td><td class="b2c">10</td></tr>
+      <tr><td>16</td><td><b>Upgant Schott</b></td><td>22</td><td>1</td><td>22.00</td><td>10 496</td><td class="b2b">0</td><td class="b2c">22</td></tr>
+      <tr><td>17</td><td><b>Hatten</b></td><td>21</td><td>4</td><td>5.25</td><td>11 209</td><td class="b2b">0</td><td class="b2c">21</td></tr>
+      <tr><td>18</td><td><b>Schwedt/Oder</b></td><td>20</td><td>2</td><td>10.00</td><td>7 272</td><td class="b2b">20</td><td class="b2c">0</td></tr>
+      <tr><td>19</td><td><b>Dresden</b></td><td>19</td><td>15</td><td>1.27</td><td>2 143</td><td class="b2b">7</td><td class="b2c">12</td></tr>
+      <tr><td>20</td><td><b>Frankfurt am Main</b></td><td>19</td><td>18</td><td>1.06</td><td>3 155</td><td class="b2b">6</td><td class="b2c">13</td></tr>
+      <tr><td>21</td><td><b>Osterholz-Scharmbeck</b></td><td>18</td><td>4</td><td>4.50</td><td>3 040</td><td class="b2b">1</td><td class="b2c">17</td></tr>
+      <tr><td>22</td><td><b>Westoverledingen</b></td><td>18</td><td>7</td><td>2.57</td><td>3 684</td><td class="b2b">6</td><td class="b2c">12</td></tr>
+      <tr><td>23</td><td><b>Schiffdorf</b></td><td>18</td><td>1</td><td>18.00</td><td>21 470</td><td class="b2b">0</td><td class="b2c">18</td></tr>
+      <tr><td>24</td><td><b>Nürnberg</b></td><td>17</td><td>17</td><td>1.00</td><td>1 032</td><td class="b2b">4</td><td class="b2c">13</td></tr>
+      <tr><td>25</td><td><b>Südbrookmerland</b></td><td>17</td><td>4</td><td>4.25</td><td>1 603</td><td class="b2b">0</td><td class="b2c">17</td></tr>
+      <tr><td>26</td><td><b>Wuppertal</b></td><td>17</td><td>13</td><td>1.31</td><td>3 558</td><td class="b2b">8</td><td class="b2c">9</td></tr>
+      <tr><td>27</td><td><b>Plauen</b></td><td>17</td><td>4</td><td>4.25</td><td>14 114</td><td class="b2b">14</td><td class="b2c">3</td></tr>
+      <tr><td>28</td><td><b>Waldsassen</b></td><td>17</td><td>3</td><td>5.67</td><td>2 232</td><td class="b2b">16</td><td class="b2c">1</td></tr>
+      <tr><td>29</td><td><b>Eberswalde</b></td><td>17</td><td>7</td><td>2.43</td><td>10 100</td><td class="b2b">14</td><td class="b2c">3</td></tr>
+      <tr><td>30</td><td><b>Lengerich</b></td><td>16</td><td>1</td><td>16.00</td><td>5 405</td><td class="b2b">0</td><td class="b2c">16</td></tr>
+      <tr><td>31</td><td><b>Garrel</b></td><td>16</td><td>2</td><td>8.00</td><td>5 469</td><td class="b2b">16</td><td class="b2c">0</td></tr>
+      <tr><td>32</td><td><b>Düsseldorf</b></td><td>16</td><td>13</td><td>1.23</td><td>1 506</td><td class="b2b">3</td><td class="b2c">13</td></tr>
+      <tr><td>33</td><td><b>Geeste</b></td><td>15</td><td>2</td><td>7.50</td><td>3 928</td><td class="b2b">0</td><td class="b2c">15</td></tr>
+      <tr><td>34</td><td><b>Mönchengladbach</b></td><td>15</td><td>10</td><td>1.50</td><td>1 974</td><td class="b2b">6</td><td class="b2c">9</td></tr>
+      <tr><td>35</td><td><b>Aachen</b></td><td>15</td><td>9</td><td>1.67</td><td>2 208</td><td class="b2b">11</td><td class="b2c">4</td></tr>
+      <tr><td>36</td><td><b>Frankfurt (Oder)</b></td><td>15</td><td>2</td><td>7.50</td><td>8 252</td><td class="b2b">15</td><td class="b2c">0</td></tr>
+      <tr><td>37</td><td><b>Haren/Ems</b></td><td>14</td><td>2</td><td>7.00</td><td>2 837</td><td class="b2b">0</td><td class="b2c">14</td></tr>
+      <tr><td>38</td><td><b>Wiesbaden</b></td><td>13</td><td>11</td><td>1.18</td><td>1 226</td><td class="b2b">2</td><td class="b2c">11</td></tr>
+      <tr><td>39</td><td><b>Augsburg</b></td><td>13</td><td>9</td><td>1.44</td><td>1 378</td><td class="b2b">5</td><td class="b2c">8</td></tr>
+      <tr><td>40</td><td><b>Bremerhaven</b></td><td>13</td><td>6</td><td>2.17</td><td>11 313</td><td class="b2b">10</td><td class="b2c">3</td></tr>
+      <tr><td>41</td><td><b>Heek</b></td><td>13</td><td>3</td><td>4.33</td><td>4 256</td><td class="b2b">13</td><td class="b2c">0</td></tr>
+      <tr><td>42</td><td><b>Bohmte</b></td><td>12</td><td>3</td><td>4.00</td><td>3 536</td><td class="b2b">4</td><td class="b2c">8</td></tr>
+      <tr><td>43</td><td><b>Marktredwitz</b></td><td>12</td><td>4</td><td>3.00</td><td>2 965</td><td class="b2b">9</td><td class="b2c">3</td></tr>
+      <tr><td>44</td><td><b>Thiersheim</b></td><td>12</td><td>3</td><td>4.00</td><td>3 786</td><td class="b2b">6</td><td class="b2c">6</td></tr>
+      <tr><td>45</td><td><b>Rehau</b></td><td>11</td><td>2</td><td>5.50</td><td>1 946</td><td class="b2b">10</td><td class="b2c">1</td></tr>
+      <tr><td>46</td><td><b>Karlsruhe</b></td><td>11</td><td>9</td><td>1.22</td><td>431</td><td class="b2b">4</td><td class="b2c">7</td></tr>
+      <tr><td>47</td><td><b>Wunsiedel</b></td><td>11</td><td>3</td><td>3.67</td><td>2 567</td><td class="b2b">11</td><td class="b2c">0</td></tr>
+      <tr><td>48</td><td><b>Leer</b></td><td>11</td><td>3</td><td>3.67</td><td>3 273</td><td class="b2b">8</td><td class="b2c">3</td></tr>
+      <tr><td>49</td><td><b>Magdeburg</b></td><td>11</td><td>11</td><td>1.00</td><td>965</td><td class="b2b">4</td><td class="b2c">7</td></tr>
+      <tr><td>50</td><td><b>Cloppenburg</b></td><td>11</td><td>5</td><td>2.20</td><td>3 065</td><td class="b2b">9</td><td class="b2c">2</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>📮 Top 30 PLZ-regionů (první 2 číslice)</h2>
+  <div id="plz_chart" style="height: 360px;"></div>
+  <p class="muted">PLZ-Leitzahl: každá oblast pokrývá souvislé seskupení měst. Lze využít pro geo-cílenou kampaň.</p>
+</section>
+
+<section>
+  <h2>🌐 Non-DE země</h2>
+  <table>
+    <thead><tr><th>Země</th><th>Obj.</th><th>Obrat (EUR)</th></tr></thead>
+    <tbody>
+      <tr><td>Österreich</td><td>10</td><td>782</td></tr>
+      <tr><td>Tschechische Republik</td><td>7</td><td>78</td></tr>
+      <tr><td>Belgien</td><td>6</td><td>1 212</td></tr>
+      <tr><td>Luxemburg</td><td>3</td><td>201</td></tr>
+      <tr><td>Niederlande</td><td>1</td><td>114</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer>
+  Generováno 12. 5. 2026 16:27 &middot;
+  Data: Shoptet DE export &middot; GDPR anonymizováno
+</footer>
+</div>
+<script>
+
+const PLZ = [{"billPLZ2": "26", "pocet": 299, "obrat": 85798}, {"billPLZ2": "49", "pocet": 267, "obrat": 77355}, {"billPLZ2": "95", "pocet": 236, "obrat": 44705}, {"billPLZ2": "10", "pocet": 106, "obrat": 13852}, {"billPLZ2": "27", "pocet": 95, "obrat": 45111}, {"billPLZ2": "16", "pocet": 87, "obrat": 39098}, {"billPLZ2": "15", "pocet": 86, "obrat": 31026}, {"billPLZ2": "86", "pocet": 77, "obrat": 8507}, {"billPLZ2": "48", "pocet": 74, "obrat": 27210}, {"billPLZ2": "12", "pocet": 73, "obrat": 12021}, {"billPLZ2": "45", "pocet": 70, "obrat": 8711}, {"billPLZ2": "85", "pocet": 67, "obrat": 7375}, {"billPLZ2": "28", "pocet": 67, "obrat": 11031}, {"billPLZ2": "92", "pocet": 66, "obrat": 16737}, {"billPLZ2": "91", "pocet": 62, "obrat": 6481}, {"billPLZ2": "79", "pocet": 60, "obrat": 7736}, {"billPLZ2": "14", "pocet": 59, "obrat": 11233}, {"billPLZ2": "97", "pocet": 57, "obrat": 5985}, {"billPLZ2": "88", "pocet": 54, "obrat": 12471}, {"billPLZ2": "83", "pocet": 53, "obrat": 8631}, {"billPLZ2": "08", "pocet": 52, "obrat": 17098}, {"billPLZ2": "73", "pocet": 52, "obrat": 7495}, {"billPLZ2": "59", "pocet": 52, "obrat": 3619}, {"billPLZ2": "17", "pocet": 51, "obrat": 11793}, {"billPLZ2": "01", "pocet": 51, "obrat": 3801}, {"billPLZ2": "63", "pocet": 50, "obrat": 4232}, {"billPLZ2": "21", "pocet": 50, "obrat": 5735}, {"billPLZ2": "53", "pocet": 49, "obrat": 3227}, {"billPLZ2": "06", "pocet": 48, "obrat": 3533}, {"billPLZ2": "41", "pocet": 48, "obrat": 4185}];
+Plotly.newPlot("plz_chart", [
+  { x: PLZ.map(d => d.billPLZ2), y: PLZ.map(d => d.pocet), type: "bar",
+     marker: { color: "#1565C0" }, name: "Objednávek",
+     hovertemplate: "PLZ %{x}xxx<br>%{y} obj.<extra></extra>" }
+], { paper_bgcolor: "#fff", plot_bgcolor: "#f8f9fa",
+      font: { family: "Inter, Arial", size: 12 },
+      xaxis: { title: "PLZ-Leitzahl (první 2 číslice PSČ)", type: "category" },
+      yaxis: { title: "Počet objednávek" } }, { responsive: true });
+
+</script>
+</body></html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>🏢 B2B detail — Prema (i-prema.de)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+<style>
+:root {
+  --brand: #1565C0; --brand-dark: #0d3d6b; --brand-light: #90c2ed;
+  --b2b: #FB8C00; --b2c: #2E7D32; --danger: #c62828;
+  --bg: #f5f7fa; --card: #fff; --text: #1a1a2e; --muted: #5c6470;
+  --border: #e2e5ed;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.5; }
+.container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+header { background: #fff; border-bottom: 3px solid var(--brand);
+  padding: 24px 20px; margin-bottom: 24px;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+header .logo { max-height: 60px; }
+header h1 { font-size: 22px; font-weight: 700; color: var(--brand-dark); }
+header .meta { text-align: right; font-size: 13px; color: var(--muted); }
+nav.subnav { background: #fff; padding: 12px 20px; margin-bottom: 20px;
+  border-bottom: 1px solid var(--border); display: flex; gap: 14px; flex-wrap: wrap; }
+nav.subnav a { font-size: 13px; color: var(--muted); text-decoration: none;
+  padding: 4px 8px; border-radius: 3px; transition: all .15s; }
+nav.subnav a:hover { color: var(--brand); background: var(--brand-light); }
+nav.subnav a.active { color: #fff; background: var(--brand); font-weight: 600; }
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px; margin-bottom: 24px; }
+.kpi { background: var(--card); padding: 18px; border-left: 4px solid var(--brand);
+  box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+.kpi .label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.kpi .value { font-size: 24px; font-weight: 700; margin-top: 4px; color: var(--brand-dark); }
+.kpi .detail { font-size: 12px; color: var(--muted); margin-top: 4px; }
+section { background: var(--card); padding: 24px; margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+section h2 { font-size: 18px; font-weight: 700; color: var(--brand-dark); margin-bottom: 16px;
+  padding-bottom: 8px; border-bottom: 2px solid var(--border); }
+section h3 { font-size: 14px; font-weight: 600; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: var(--brand); color: #fff; padding: 8px 10px; text-align: left; font-weight: 600; }
+td { padding: 8px 10px; border-bottom: 1px solid var(--border); }
+tr:hover td { background: #f9fafb; }
+.b2b { color: var(--b2b); font-weight: 600; }
+.b2c { color: var(--b2c); font-weight: 600; }
+.danger { color: var(--danger); font-weight: 600; }
+.tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+.tag.b2b { background: #fff3e0; color: #e65100; }
+.tag.b2c { background: #e8f5e9; color: #1b5e20; }
+.muted { color: var(--muted); font-size: 12px; }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 800px) { .split { grid-template-columns: 1fr; } }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div style="display:flex; align-items:center; gap:16px;">
+    <img src="https://cdn.myshoptet.com/usr/www.i-prema.de/user/logos/logo_prema-5.png" alt="Prema logo" class="logo">
+    <div>
+      <h1>🏢 B2B detail</h1>
+      <div class="muted">i-prema.de · 12. 5. 2025 → 11. 5. 2026</div>
+    </div>
+  </div>
+  <div class="meta">Část reporting hubu &middot; <a href="index.html" style="color: var(--brand);">Přehled →</a></div>
+</header>
+<nav class="subnav">
+  <a href="index.html">📦 Orders přehled</a>
+  <a href="storna.html">⛔ Storna & failed</a>
+  <a href="b2b.html">🏢 B2B detail</a>
+  <a href="produkty.html">🏆 Top produkty</a>
+  <a href="geografie.html">🗺️ Geografie</a>
+  <a href="mapa_bundeslander.html">🇩🇪 Mapa Bundesländer</a>
+</nav>
+
+<section>
+  <h2>🏢 B2B hluboký pohled — klíčové ukazatele</h2>
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="label">B2B objednávky</div>
+      <div class="value b2b">1 620</div>
+      <div class="detail">35.1 % všech valid obj.</div>
+    </div>
+    <div class="kpi">
+      <div class="label">B2B obrat</div>
+      <div class="value b2b">401 719 EUR</div>
+      <div class="detail">52.9 % obratu</div>
+    </div>
+    <div class="kpi">
+      <div class="label">B2B AOV vs B2C</div>
+      <div class="value">248 / 119 EUR</div>
+      <div class="detail">B2B nakupuje 2.1× větší košík</div>
+    </div>
+    <div class="kpi">
+      <div class="label">B2B repeat rate</div>
+      <div class="value">23.5 %</div>
+      <div class="detail">222 z 945 B2B zákazníků (2+ obj.)</div>
+    </div>
+    <div class="kpi">
+      <div class="label">B2C repeat rate (srovnání)</div>
+      <div class="value">10.8 %</div>
+      <div class="detail">251 z 2323 B2C zákazníků</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Pareto: top 10 % B2B zákazníků</div>
+      <div class="value">60 %</div>
+      <div class="detail">dělají 60 % B2B obratu (top 94)</div>
+    </div>
+    <div class="kpi">
+      <div class="label">B2B 5+ obj.</div>
+      <div class="value">61</div>
+      <div class="detail">hardcore loyalists — péče priority</div>
+    </div>
+    <div class="kpi">
+      <div class="label">B2B zákazníků celkem</div>
+      <div class="value">945</div>
+      <div class="detail">unikátní (hash e-mailu)</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>📅 B2B vs B2C v čase</h2>
+  <div id="b2b_monthly_chart" style="height: 360px;"></div>
+</section>
+
+<section>
+  <h2>🏙️ Top 20 měst dle B2B obratu</h2>
+  <table>
+    <thead><tr><th>#</th><th>Město</th><th>B2B obj.</th><th>B2B obrat (EUR)</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><b>Berlin</b></td><td>84</td><td>21 237</td></tr>
+      <tr><td>2</td><td><b>Plauen</b></td><td>14</td><td>13 671</td></tr>
+      <tr><td>3</td><td><b>Esche</b></td><td>37</td><td>13 034</td></tr>
+      <tr><td>4</td><td><b>Bremerhaven</b></td><td>10</td><td>11 237</td></tr>
+      <tr><td>5</td><td><b>Eberswalde</b></td><td>14</td><td>10 043</td></tr>
+      <tr><td>6</td><td><b>Schwedt</b></td><td>7</td><td>10 039</td></tr>
+      <tr><td>7</td><td><b>Schöneiche b Berlin</b></td><td>9</td><td>8 994</td></tr>
+      <tr><td>8</td><td><b>Prenzlau</b></td><td>25</td><td>8 895</td></tr>
+      <tr><td>9</td><td><b>Frankfurt (Oder)</b></td><td>15</td><td>8 252</td></tr>
+      <tr><td>10</td><td><b>Schwedt/Oder</b></td><td>20</td><td>7 272</td></tr>
+      <tr><td>11</td><td><b>Selb</b></td><td>36</td><td>5 939</td></tr>
+      <tr><td>12</td><td><b>Hamburg</b></td><td>18</td><td>5 796</td></tr>
+      <tr><td>13</td><td><b>Schönwald</b></td><td>28</td><td>5 768</td></tr>
+      <tr><td>14</td><td><b>Garrel</b></td><td>16</td><td>5 469</td></tr>
+      <tr><td>15</td><td><b>München</b></td><td>31</td><td>5 338</td></tr>
+      <tr><td>16</td><td><b>Cappeln</b></td><td>9</td><td>4 974</td></tr>
+      <tr><td>17</td><td><b>Heek</b></td><td>13</td><td>4 256</td></tr>
+      <tr><td>18</td><td><b>Ostrach</b></td><td>3</td><td>3 937</td></tr>
+      <tr><td>19</td><td><b>Essen</b></td><td>25</td><td>3 700</td></tr>
+      <tr><td>20</td><td><b>Arzberg</b></td><td>5</td><td>3 677</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer>
+  Generováno 12. 5. 2026 16:27 &middot;
+  Data: Shoptet DE export &middot; GDPR anonymizováno
+</footer>
+</div>
+<script>
+
+const B2B = [{"month": "2025-05", "pocet": 87, "obrat": 20418.62}, {"month": "2025-06", "pocet": 115, "obrat": 30583.06}, {"month": "2025-07", "pocet": 151, "obrat": 37184.53}, {"month": "2025-08", "pocet": 136, "obrat": 32165.77}, {"month": "2025-09", "pocet": 135, "obrat": 38336.36}, {"month": "2025-10", "pocet": 133, "obrat": 33896.64}, {"month": "2025-11", "pocet": 142, "obrat": 36867.92}, {"month": "2025-12", "pocet": 95, "obrat": 21717.41}, {"month": "2026-01", "pocet": 148, "obrat": 34308.76}, {"month": "2026-02", "pocet": 114, "obrat": 23803.3}, {"month": "2026-03", "pocet": 166, "obrat": 45114.98}, {"month": "2026-04", "pocet": 154, "obrat": 37738.52}, {"month": "2026-05", "pocet": 44, "obrat": 9583.55}];
+const B2C = [{"month": "2025-05", "pocet": 163, "obrat": 20295.09}, {"month": "2025-06", "pocet": 205, "obrat": 31148.19}, {"month": "2025-07", "pocet": 267, "obrat": 29345.08}, {"month": "2025-08", "pocet": 270, "obrat": 31422.75}, {"month": "2025-09", "pocet": 243, "obrat": 26649.88}, {"month": "2025-10", "pocet": 237, "obrat": 31149.59}, {"month": "2025-11", "pocet": 318, "obrat": 33212.34}, {"month": "2025-12", "pocet": 230, "obrat": 24325.12}, {"month": "2026-01", "pocet": 282, "obrat": 27977.45}, {"month": "2026-02", "pocet": 196, "obrat": 25584.02}, {"month": "2026-03", "pocet": 274, "obrat": 34522.75}, {"month": "2026-04", "pocet": 233, "obrat": 31865.89}, {"month": "2026-05", "pocet": 81, "obrat": 9556.98}];
+Plotly.newPlot("b2b_monthly_chart", [
+  { x: B2B.map(d => d.month), y: B2B.map(d => d.obrat), name: "B2B obrat",
+     type: "bar", marker: { color: "#FB8C00" } },
+  { x: B2C.map(d => d.month), y: B2C.map(d => d.obrat), name: "B2C obrat",
+     type: "bar", marker: { color: "#2E7D32" } }
+], { paper_bgcolor: "#fff", plot_bgcolor: "#f8f9fa",
+      barmode: "stack",
+      font: { family: "Inter, Arial", size: 12 },
+      yaxis: { title: "Obrat (EUR)" },
+      legend: { orientation: "h", y: -0.2 } }, { responsive: true });
+
+</script>
+</body></html>
