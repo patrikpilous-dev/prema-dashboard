@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>📦 Kategorie — Prema (i-prema.de)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+<style>
+:root {
+  --brand: #1565C0; --brand-dark: #0d3d6b; --brand-light: #90c2ed;
+  --b2b: #FB8C00; --b2c: #2E7D32; --danger: #c62828;
+  --bg: #f5f7fa; --card: #fff; --text: #1a1a2e; --muted: #5c6470;
+  --border: #e2e5ed;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.5; }
+.container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+header { background: #fff; border-bottom: 3px solid var(--brand);
+  padding: 24px 20px; margin-bottom: 24px;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+header .logo { max-height: 60px; }
+header h1 { font-size: 22px; font-weight: 700; color: var(--brand-dark); }
+header .meta { text-align: right; font-size: 13px; color: var(--muted); }
+nav.subnav { background: #fff; padding: 12px 20px; margin-bottom: 20px;
+  border-bottom: 1px solid var(--border); display: flex; gap: 14px; flex-wrap: wrap; }
+nav.subnav a { font-size: 13px; color: var(--muted); text-decoration: none;
+  padding: 4px 8px; border-radius: 3px; transition: all .15s; }
+nav.subnav a:hover { color: var(--brand); background: var(--brand-light); }
+nav.subnav a.active { color: #fff; background: var(--brand); font-weight: 600; }
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px; margin-bottom: 24px; }
+.kpi { background: var(--card); padding: 18px; border-left: 4px solid var(--brand);
+  box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+.kpi .label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.kpi .value { font-size: 24px; font-weight: 700; margin-top: 4px; color: var(--brand-dark); }
+.kpi .detail { font-size: 12px; color: var(--muted); margin-top: 4px; }
+section { background: var(--card); padding: 24px; margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+section h2 { font-size: 18px; font-weight: 700; color: var(--brand-dark); margin-bottom: 16px;
+  padding-bottom: 8px; border-bottom: 2px solid var(--border); }
+section h3 { font-size: 14px; font-weight: 600; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: var(--brand); color: #fff; padding: 8px 10px; text-align: left; font-weight: 600; }
+td { padding: 8px 10px; border-bottom: 1px solid var(--border); }
+tr:hover td { background: #f9fafb; }
+.b2b { color: var(--b2b); font-weight: 600; }
+.b2c { color: var(--b2c); font-weight: 600; }
+.danger { color: var(--danger); font-weight: 600; }
+.tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+.tag.b2b { background: #fff3e0; color: #e65100; }
+.tag.b2c { background: #e8f5e9; color: #1b5e20; }
+.muted { color: var(--muted); font-size: 12px; }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 800px) { .split { grid-template-columns: 1fr; } }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div style="display:flex; align-items:center; gap:16px;">
+    <img src="https://cdn.myshoptet.com/usr/www.i-prema.de/user/logos/logo_prema-5.png" alt="Prema logo" class="logo">
+    <div>
+      <h1>📦 Kategorie</h1>
+      <div class="muted">i-prema.de · 12. 5. 2025 → 11. 5. 2026</div>
+    </div>
+  </div>
+  <div class="meta"><a href="https://patrikpilous-dev.github.io/prema-hub/" style="color: var(--brand); font-weight: 600;">← Zpět do hubu</a></div>
+</header>
+<nav class="subnav">
+  <a href="index.html">📦 Orders přehled</a>
+  <a href="storna.html">⛔ Storna & failed</a>
+  <a href="b2b.html">🏢 B2B vs B2C</a>
+  <a href="produkty.html">🏆 Top produkty</a>
+  <a href="kategorie.html">📦 Kategorie</a>
+  <a href="geografie.html">🗺️ Geografie</a>
+  <a href="mapa_bundeslander.html">🇩🇪 Mapa Bundesländer</a>
+  <a href="https://patrikpilous-dev.github.io/prema-sos/" target="_blank" rel="noopener">🔍 SoS DE</a>
+</nav>
+
+<section>
+  <h2>📦 Kategorie produktů — finanční pohled</h2>
+  <p class="muted" style="margin-bottom: 16px;">Kategorie odvozeny z německého názvu produktu (regex matching). 14 skupin pokrývá 232 773 prodaných kusů.</p>
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="label">Top kategorie obratem</div>
+      <div class="value">Ostatní</div>
+      <div class="detail">25 834 EUR (22 % obratu)</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Top 3 kategorií drží</div>
+      <div class="value">62 % obratu</div>
+      <div class="detail">Ostatní  Štětce & válečky  Krepové pásky & maskování</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Nejvyšší AOV per kategorie</div>
+      <div class="value">Nářadí & nástroje</div>
+      <div class="detail">28 EUR / obj.</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Nejvyšší storno-rate</div>
+      <div class="value danger">Nářadí & nástroje</div>
+      <div class="detail">11.76 % stornovaných kusů</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>📊 Podíl kategorií na obratu</h2>
+  <div id="cat_pie_chart" style="height: 380px;"></div>
+</section>
+
+<section>
+  <h2>💰 Plná tabulka kategorií (klikni hlavičku pro řazení)</h2>
+  <table>
+    <thead><tr>
+      <th>Kategorie</th>
+      <th data-numeric="true">SKU</th>
+      <th data-numeric="true">Kusů</th>
+      <th data-numeric="true">Obj.</th>
+      <th data-numeric="true">Obrat (EUR)</th>
+      <th data-numeric="true">% obratu</th>
+      <th data-numeric="true">Cena/ks (EUR)</th>
+      <th data-numeric="true">EUR/obj.</th>
+      <th data-numeric="true">B2B %</th>
+      <th data-numeric="true">Storno-rate %</th>
+    </tr></thead>
+    <tbody>
+      <tr><td><b>Ostatní</b></td><td>548</td><td>34 528</td><td>3159</td><td>25 834</td><td>22.1 %</td><td>0.75</td><td>8.2</td><td>58.7 %</td><td>1.95 %</td></tr>
+      <tr><td><b>Štětce & válečky</b></td><td>323</td><td>78 853</td><td>1534</td><td>24 458</td><td>20.9 %</td><td>0.31</td><td>15.9</td><td>60.7 %</td><td>1.01 %</td></tr>
+      <tr><td><b>Krepové pásky & maskování</b></td><td>89</td><td>47 175</td><td>1120</td><td>22 460</td><td>19.2 %</td><td>0.48</td><td>20.1</td><td>57.8 %</td><td>0.54 %</td></tr>
+      <tr><td><b>Krycí folie & plachty</b></td><td>43</td><td>13 679</td><td>544</td><td>9 809</td><td>8.4 %</td><td>0.72</td><td>18.0</td><td>52.9 %</td><td>0.15 %</td></tr>
+      <tr><td><b>Špachtle & cutter</b></td><td>169</td><td>17 122</td><td>1080</td><td>9 761</td><td>8.3 %</td><td>0.57</td><td>9.0</td><td>51.8 %</td><td>1.55 %</td></tr>
+      <tr><td><b>OOPP & ochrana</b></td><td>158</td><td>21 570</td><td>759</td><td>7 723</td><td>6.6 %</td><td>0.36</td><td>10.2</td><td>44.2 %</td><td>1.40 %</td></tr>
+      <tr><td><b>Kbelíky & nádoby</b></td><td>27</td><td>15 656</td><td>639</td><td>7 291</td><td>6.2 %</td><td>0.47</td><td>11.4</td><td>60.3 %</td><td>1.41 %</td></tr>
+      <tr><td><b>Nářadí & nástroje</b></td><td>16</td><td>180</td><td>136</td><td>3 858</td><td>3.3 %</td><td>21.43</td><td>28.4</td><td>37.2 %</td><td>11.76 %</td></tr>
+      <tr><td><b>Putz & omítky</b></td><td>27</td><td>1 171</td><td>331</td><td>2 162</td><td>1.8 %</td><td>1.85</td><td>6.5</td><td>44.5 %</td><td>7.58 %</td></tr>
+      <tr><td><b>Hygiena & ostatní</b></td><td>50</td><td>1 073</td><td>352</td><td>2 049</td><td>1.8 %</td><td>1.91</td><td>5.8</td><td>45.2 %</td><td>7.66 %</td></tr>
+      <tr><td><b>Tapety & klihovina</b></td><td>9</td><td>390</td><td>121</td><td>725</td><td>0.6 %</td><td>1.86</td><td>6.0</td><td>37.7 %</td><td>4.41 %</td></tr>
+      <tr><td><b>Lampy & osvětlení</b></td><td>14</td><td>914</td><td>175</td><td>632</td><td>0.5 %</td><td>0.69</td><td>3.6</td><td>38.1 %</td><td>6.83 %</td></tr>
+      <tr><td><b>Lepidla & tmely</b></td><td>2</td><td>338</td><td>33</td><td>126</td><td>0.1 %</td><td>0.37</td><td>3.8</td><td>48.2 %</td><td>0.29 %</td></tr>
+      <tr><td><b>Barvy & laky</b></td><td>4</td><td>124</td><td>27</td><td>59</td><td>0.1 %</td><td>0.48</td><td>2.2</td><td>54.8 %</td><td>7.46 %</td></tr>
+    </tbody>
+  </table>
+  <p class="muted" style="margin-top: 12px;">
+    <b>Cena/ks</b> = obrat / kusů (průměrná cena položky). <b>EUR/obj.</b> = obrat / počet objednávek (kolik EUR ta kategorie přinese, když je v košíku). <b>B2B %</b> = podíl B2B kusů z kategorie. <b>Storno-rate</b> = kusů ve stornovaných obj. ÷ (storno + valid kusy).
+  </p>
+</section>
+
+<section>
+  <h2>💡 Strategická doporučení per kategorie</h2>
+  <ul style="padding-left: 20px; line-height: 1.8;">
+    <li><b>Hvězdy</b> (top obrat + nízká storno-rate): chránit dostupnost, kompletní filtry, hero pozice. Vyšší PPC bid.</li>
+    <li><b>Cash cows</b> (vysoký B2B % + repeat-orderable): nastavit auto-recurring nabídku, množstevní slevy 5+/10+/50+, NET-30 fakturace pro největší zákazníky.</li>
+    <li><b>Problémové storno</b>: kategorie nad ~3 % storno-rate prověřit — chybí stock, nereálné dodací lhůty, nebo dražší doprava než alternativy.</li>
+    <li><b>Dlouhý ocas</b> (Ostatní + malé kategorie): kandidáti na cross-sell trigger v košíku, ne hlavní katalogová pozice.</li>
+  </ul>
+</section>
+
+<footer>
+  Generováno 12. 5. 2026 18:15 &middot;
+  Data: Shoptet DE export &middot; GDPR anonymizováno
+</footer>
+</div>
+<script src="sortable.js"></script>
+<script>
+
+const CATS = [{"kategorie": "\u0160t\u011btce & v\u00e1le\u010dky", "ks": 78853, "obrat": 24458, "obj": 1534, "sku": 323, "aov_ks": 0.31, "obrat_per_obj": 15.9, "storno_ks": 802, "storno_obrat": 391, "b2b_pct": 60.7, "storno_rate": 1.01, "pct_obrat": 20.9}, {"kategorie": "Krepov\u00e9 p\u00e1sky & maskov\u00e1n\u00ed", "ks": 47175, "obrat": 22460, "obj": 1120, "sku": 89, "aov_ks": 0.48, "obrat_per_obj": 20.1, "storno_ks": 258, "storno_obrat": 165, "b2b_pct": 57.8, "storno_rate": 0.54, "pct_obrat": 19.2}, {"kategorie": "Kryc\u00ed folie & plachty", "ks": 13679, "obrat": 9809, "obj": 544, "sku": 43, "aov_ks": 0.72, "obrat_per_obj": 18.0, "storno_ks": 21, "storno_obrat": 58, "b2b_pct": 52.9, "storno_rate": 0.15, "pct_obrat": 8.4}, {"kategorie": "\u0160pachtle & cutter", "ks": 17122, "obrat": 9761, "obj": 1080, "sku": 169, "aov_ks": 0.57, "obrat_per_obj": 9.0, "storno_ks": 270, "storno_obrat": 348, "b2b_pct": 51.8, "storno_rate": 1.55, "pct_obrat": 8.3}, {"kategorie": "OOPP & ochrana", "ks": 21570, "obrat": 7723, "obj": 759, "sku": 158, "aov_ks": 0.36, "obrat_per_obj": 10.2, "storno_ks": 306, "storno_obrat": 170, "b2b_pct": 44.2, "storno_rate": 1.4, "pct_obrat": 6.6}, {"kategorie": "Kbel\u00edky & n\u00e1doby", "ks": 15656, "obrat": 7291, "obj": 639, "sku": 27, "aov_ks": 0.47, "obrat_per_obj": 11.4, "storno_ks": 224, "storno_obrat": 142, "b2b_pct": 60.3, "storno_rate": 1.41, "pct_obrat": 6.2}, {"kategorie": "N\u00e1\u0159ad\u00ed & n\u00e1stroje", "ks": 180, "obrat": 3858, "obj": 136, "sku": 16, "aov_ks": 21.43, "obrat_per_obj": 28.4, "storno_ks": 24, "storno_obrat": 618, "b2b_pct": 37.2, "storno_rate": 11.76, "pct_obrat": 3.3}, {"kategorie": "Putz & om\u00edtky", "ks": 1171, "obrat": 2162, "obj": 331, "sku": 27, "aov_ks": 1.85, "obrat_per_obj": 6.5, "storno_ks": 96, "storno_obrat": 299, "b2b_pct": 44.5, "storno_rate": 7.58, "pct_obrat": 1.8}, {"kategorie": "Hygiena & ostatn\u00ed", "ks": 1073, "obrat": 2049, "obj": 352, "sku": 50, "aov_ks": 1.91, "obrat_per_obj": 5.8, "storno_ks": 89, "storno_obrat": 226, "b2b_pct": 45.2, "storno_rate": 7.66, "pct_obrat": 1.8}, {"kategorie": "Tapety & klihovina", "ks": 390, "obrat": 725, "obj": 121, "sku": 9, "aov_ks": 1.86, "obrat_per_obj": 6.0, "storno_ks": 18, "storno_obrat": 18, "b2b_pct": 37.7, "storno_rate": 4.41, "pct_obrat": 0.6}];
+Plotly.newPlot("cat_pie_chart", [{
+  labels: CATS.map(c => c.kategorie),
+  values: CATS.map(c => c.obrat),
+  type: "pie",
+  textinfo: "label+percent",
+  textposition: "outside",
+  marker: {
+    colors: ["#1565C0", "#FB8C00", "#2E7D32", "#7B1FA2", "#00838F",
+             "#C62828", "#5D4037", "#F57F17", "#283593", "#558B2F"]
+  },
+  hovertemplate: "<b>%{label}</b><br>%{value:,.0f} EUR<br>%{percent}<extra></extra>",
+}], {
+  paper_bgcolor: "#fff",
+  font: { family: "Inter, Arial", size: 12 },
+  margin: { t: 30, r: 20, b: 20, l: 20 },
+  showlegend: false,
+}, { responsive: true });
+
+</script>
+</body></html>

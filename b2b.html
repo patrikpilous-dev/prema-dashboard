@@ -2,7 +2,7 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
-<title>🏢 B2B detail — Prema (i-prema.de)</title>
+<title>🏢 vs 🛒 B2B vs B2C — srovnání — Prema (i-prema.de)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
 <style>
@@ -62,7 +62,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px
   <div style="display:flex; align-items:center; gap:16px;">
     <img src="https://cdn.myshoptet.com/usr/www.i-prema.de/user/logos/logo_prema-5.png" alt="Prema logo" class="logo">
     <div>
-      <h1>🏢 B2B detail</h1>
+      <h1>🏢 vs 🛒 B2B vs B2C — srovnání</h1>
       <div class="muted">i-prema.de · 12. 5. 2025 → 11. 5. 2026</div>
     </div>
   </div>
@@ -71,112 +71,209 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px
 <nav class="subnav">
   <a href="index.html">📦 Orders přehled</a>
   <a href="storna.html">⛔ Storna & failed</a>
-  <a href="b2b.html">🏢 B2B detail</a>
+  <a href="b2b.html">🏢 B2B vs B2C</a>
   <a href="produkty.html">🏆 Top produkty</a>
+  <a href="kategorie.html">📦 Kategorie</a>
   <a href="geografie.html">🗺️ Geografie</a>
   <a href="mapa_bundeslander.html">🇩🇪 Mapa Bundesländer</a>
   <a href="https://patrikpilous-dev.github.io/prema-sos/" target="_blank" rel="noopener">🔍 SoS DE</a>
 </nav>
 
 <section>
-  <h2>🏢 B2B hluboký pohled — klíčové ukazatele</h2>
-  <div class="kpi-grid">
-    <div class="kpi">
-      <div class="label">B2B objednávky</div>
-      <div class="value b2b">1 620</div>
-      <div class="detail">35.1 % všech valid obj.</div>
+  <h2>🏢 vs 🛒 B2B vs B2C — srovnání</h2>
+  <p class="muted" style="margin-bottom: 16px;">Srovnání dvou segmentů zákazníků Premy: B2B (firmy s IČO  řemeslníci/malíři) vs B2C (koncoví zákazníci). Cílem je vidět  v čem se chovají <b>jinak</b> a v čem <b>stejně</b>.</p>
+  <table>
+    <thead>
+      <tr><th>Metrika</th><th>🏢 B2B</th><th>🛒 B2C</th><th>Poměr / rozdíl</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><b>Počet objednávek</b></td><td>1 620</td><td>2 999</td><td class="b2c">B2C má 1.9× víc obj.</td></tr>
+      <tr><td><b>Obrat (EUR)</b></td><td class="b2b">401 719</td><td>357 055</td><td class="b2b">B2B 53 % vs B2C 47 %</td></tr>
+      <tr><td><b>AOV (košík)</b></td><td class="b2b">248 EUR</td><td>119 EUR</td><td class="b2b">B2B košík 2.1× větší</td></tr>
+      <tr><td><b>Unikátních zákazníků</b></td><td>945</td><td>2 323</td><td>B2C 2.5× víc lidí</td></tr>
+      <tr><td><b>Repeat rate (2+ obj.)</b></td><td class="b2b">23.5 %</td><td>10.8 %</td><td class="b2b">B2B 2.2× loyaler</td></tr>
+      <tr><td><b>Hardcore (5+ obj.)</b></td><td>61</td><td>46</td><td>B2B 1.3× víc</td></tr>
+      <tr><td><b>Single-purchase</b></td><td>76.5 %</td><td class="b2c">89.2 %</td><td class="b2c">B2C má víc one-shot</td></tr>
+      <tr><td><b>Prům. LTV</b></td><td class="b2b">425 EUR</td><td>154 EUR</td><td class="b2b">2.8× vyšší LTV</td></tr>
+      <tr><td><b>Pareto top 10 % zákazníků</b></td><td>60 %</td><td>68 %</td><td>B2C koncentrovanější</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>💡 Interpretace — v čem se liší a v čem jsou stejní</h2>
+  <div class="split">
+    <div style="background: #fff3e0; padding: 16px; border-left: 4px solid var(--b2b);">
+      <h3 style="color: var(--b2b);">🏢 B2B charakteristika</h3>
+      <ul style="padding-left: 18px; line-height: 1.7;">
+        <li><b>Menší ale hodnotnější.</b> 35 % obj. ale 53 % obratu.</li>
+        <li><b>Větší košík</b> (248 EUR vs B2C 119) — nakupují větší šarže pro stavbu.</li>
+        <li><b>Vyšší retence</b> (23 % vs B2C 11 %) — řemeslníci mají rutinní nákup.</li>
+        <li><b>Predikovatelní</b> — kupují v pracovní době  opakovaně  stejné položky.</li>
+        <li><b>61 hardcore</b> zákazníků s 5+ obj. — VIP péče priority (account manager  slevy  NET-30 fakturace).</li>
+      </ul>
     </div>
-    <div class="kpi">
-      <div class="label">B2B obrat</div>
-      <div class="value b2b">401 719 EUR</div>
-      <div class="detail">52.9 % obratu</div>
-    </div>
-    <div class="kpi">
-      <div class="label">B2B AOV vs B2C</div>
-      <div class="value">248 / 119 EUR</div>
-      <div class="detail">B2B nakupuje 2.1× větší košík</div>
-    </div>
-    <div class="kpi">
-      <div class="label">B2B repeat rate</div>
-      <div class="value">23.5 %</div>
-      <div class="detail">222 z 945 B2B zákazníků (2+ obj.)</div>
-    </div>
-    <div class="kpi">
-      <div class="label">B2C repeat rate (srovnání)</div>
-      <div class="value">10.8 %</div>
-      <div class="detail">251 z 2323 B2C zákazníků</div>
-    </div>
-    <div class="kpi">
-      <div class="label">Pareto: top 10 % B2B zákazníků</div>
-      <div class="value">60 %</div>
-      <div class="detail">dělají 60 % B2B obratu (top 94)</div>
-    </div>
-    <div class="kpi">
-      <div class="label">B2B 5+ obj.</div>
-      <div class="value">61</div>
-      <div class="detail">hardcore loyalists — péče priority</div>
-    </div>
-    <div class="kpi">
-      <div class="label">B2B zákazníků celkem</div>
-      <div class="value">945</div>
-      <div class="detail">unikátní (hash e-mailu)</div>
+    <div style="background: #e8f5e9; padding: 16px; border-left: 4px solid var(--b2c);">
+      <h3 style="color: var(--b2c);">🛒 B2C charakteristika</h3>
+      <ul style="padding-left: 18px; line-height: 1.7;">
+        <li><b>Většina objemu  menší value</b>. 65 % obj. ale 47 % obratu.</li>
+        <li><b>Menší košík</b> (119 EUR) — kutilové  jednorázové renovace.</li>
+        <li><b>89 % single-shot</b> — vysoká část se nevrátí. Welcome-flow & re-targeting nutný.</li>
+        <li><b>Sezónnější</b> — víkendy  jaro/podzim peak.</li>
+        <li>Vyšší cenová citlivost — slevy  kupony fungují.</li>
+      </ul>
     </div>
   </div>
 </section>
 
 <section>
-  <h2>📅 B2B vs B2C v čase</h2>
-  <div id="b2b_monthly_chart" style="height: 360px;"></div>
+  <h2>🤝 V čem jsou si podobní</h2>
+  <ul style="padding-left: 20px; line-height: 1.8;">
+    <li><b>Stejný core sortiment.</b> Top produkty obou se výrazně překrývají (5 z 10 produktů je v top 10 obou segmentů) — krepové pásky  válečky  štětce. Obě skupiny nakupují malířské spotřební věci.</li>
+    <li><b>Stejná geografie.</b> Berlin  München  Hamburg jsou top pro oba — rozdíl je v pozadí (B2B = řemeslné firmy  B2C = obyvatelé).</li>
+    <li><b>Pareto efekt funguje u obou</b> — top 10 % zákazníků dělá 60 % obratu u B2B a 68 % u B2C. V obou segmentech má smysl si "horní vrstvu" hýčkat.</li>
+    <li><b>Storno-rate srovnatelný</b> — viz <a href="storna.html">Storna stránka</a>. Není to o segmentu  ale o zaplacení.</li>
+  </ul>
 </section>
 
 <section>
-  <h2>🏙️ Top 20 měst dle B2B obratu</h2>
-  <table>
-    <thead><tr><th>#</th><th>Město</th><th>B2B obj.</th><th>B2B obrat (EUR)</th></tr></thead>
-    <tbody>
-      <tr><td>1</td><td><b>Berlin</b></td><td>84</td><td>21 237</td></tr>
-      <tr><td>2</td><td><b>Plauen</b></td><td>14</td><td>13 671</td></tr>
-      <tr><td>3</td><td><b>Esche</b></td><td>37</td><td>13 034</td></tr>
-      <tr><td>4</td><td><b>Bremerhaven</b></td><td>10</td><td>11 237</td></tr>
-      <tr><td>5</td><td><b>Eberswalde</b></td><td>14</td><td>10 043</td></tr>
-      <tr><td>6</td><td><b>Schwedt</b></td><td>7</td><td>10 039</td></tr>
-      <tr><td>7</td><td><b>Schöneiche b Berlin</b></td><td>9</td><td>8 994</td></tr>
-      <tr><td>8</td><td><b>Prenzlau</b></td><td>25</td><td>8 895</td></tr>
-      <tr><td>9</td><td><b>Frankfurt (Oder)</b></td><td>15</td><td>8 252</td></tr>
-      <tr><td>10</td><td><b>Schwedt/Oder</b></td><td>20</td><td>7 272</td></tr>
-      <tr><td>11</td><td><b>Selb</b></td><td>36</td><td>5 939</td></tr>
-      <tr><td>12</td><td><b>Hamburg</b></td><td>18</td><td>5 796</td></tr>
-      <tr><td>13</td><td><b>Schönwald</b></td><td>28</td><td>5 768</td></tr>
-      <tr><td>14</td><td><b>Garrel</b></td><td>16</td><td>5 469</td></tr>
-      <tr><td>15</td><td><b>München</b></td><td>31</td><td>5 338</td></tr>
-      <tr><td>16</td><td><b>Cappeln</b></td><td>9</td><td>4 974</td></tr>
-      <tr><td>17</td><td><b>Heek</b></td><td>13</td><td>4 256</td></tr>
-      <tr><td>18</td><td><b>Ostrach</b></td><td>3</td><td>3 937</td></tr>
-      <tr><td>19</td><td><b>Essen</b></td><td>25</td><td>3 700</td></tr>
-      <tr><td>20</td><td><b>Arzberg</b></td><td>5</td><td>3 677</td></tr>
-    </tbody>
-  </table>
+  <h2>📅 Měsíční trend B2B vs B2C</h2>
+  <div id="monthly_chart" style="height: 360px;"></div>
+</section>
+
+<section>
+  <h2>🗓️ Dny v týdnu</h2>
+  <div id="dow_chart" style="height: 320px;"></div>
+  <p class="muted" style="margin-top: 8px;">B2B drive Po-Čt (řemeslníci nakupují v pracovních dnech)  B2C má vyrovnanější rozložení s mírným poklesem o víkendu. Pátek je hraniční.</p>
+</section>
+
+<section>
+  <h2>🕐 Hodinová distribuce — kdy nakupují</h2>
+  <div id="hour_chart" style="height: 320px;"></div>
+  <p class="muted" style="margin-top: 8px;">B2B koncentrace 10:00–15:00 (pracovní doba)  B2C větší rozsah včetně večera.</p>
+</section>
+
+<section>
+  <h2>🏙️ Top 10 měst — B2B vs B2C</h2>
+  <div class="split">
+    <div>
+      <h3 style="color: var(--b2b);">B2B</h3>
+      <table>
+        <thead><tr><th>#</th><th>Město</th><th>Obj.</th><th>Obrat (EUR)</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><b>Berlin</b></td><td>84</td><td>21 237</td></tr>
+          <tr><td>2</td><td><b>Esche</b></td><td>37</td><td>13 034</td></tr>
+          <tr><td>3</td><td><b>Selb</b></td><td>36</td><td>5 939</td></tr>
+          <tr><td>4</td><td><b>München</b></td><td>31</td><td>5 338</td></tr>
+          <tr><td>5</td><td><b>Schönwald</b></td><td>28</td><td>5 768</td></tr>
+          <tr><td>6</td><td><b>Essen</b></td><td>25</td><td>3 700</td></tr>
+          <tr><td>7</td><td><b>Prenzlau</b></td><td>25</td><td>8 895</td></tr>
+          <tr><td>8</td><td><b>Schwedt/Oder</b></td><td>20</td><td>7 272</td></tr>
+          <tr><td>9</td><td><b>Hamburg</b></td><td>18</td><td>5 796</td></tr>
+          <tr><td>10</td><td><b>Garrel</b></td><td>16</td><td>5 469</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h3 style="color: var(--b2c);">B2C</h3>
+      <table>
+        <thead><tr><th>#</th><th>Město</th><th>Obj.</th><th>Obrat (EUR)</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><b>Berlin</b></td><td>122</td><td>9 628</td></tr>
+          <tr><td>2</td><td><b>Papenburg</b></td><td>47</td><td>14 650</td></tr>
+          <tr><td>3</td><td><b>Friesoythe</b></td><td>40</td><td>12 554</td></tr>
+          <tr><td>4</td><td><b>Hamburg</b></td><td>36</td><td>1 914</td></tr>
+          <tr><td>5</td><td><b>Lingen</b></td><td>33</td><td>12 312</td></tr>
+          <tr><td>6</td><td><b>Achim</b></td><td>31</td><td>5 380</td></tr>
+          <tr><td>7</td><td><b>München</b></td><td>28</td><td>1 119</td></tr>
+          <tr><td>8</td><td><b>Upgant Schott</b></td><td>22</td><td>10 496</td></tr>
+          <tr><td>9</td><td><b>Münster</b></td><td>22</td><td>17 000</td></tr>
+          <tr><td>10</td><td><b>Köln</b></td><td>22</td><td>2 105</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>🏆 Top 10 produktů — B2B vs B2C (kusy)</h2>
+  <div class="split">
+    <div>
+      <h3 style="color: var(--b2b);">B2B nejprodávanější</h3>
+      <table>
+        <thead><tr><th>#</th><th>Produkt</th><th>Kusů</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Heizkörperwalze Schaumstoff</td><td>9 017</td></tr>
+          <tr><td>2</td><td>Maler-Flachkrepp Askon</td><td>6 266</td></tr>
+          <tr><td>3</td><td>Farbeimer oval  ohne Deckel</td><td>5 417</td></tr>
+          <tr><td>4</td><td>Heizkörperwalze Velour</td><td>5 150</td></tr>
+          <tr><td>5</td><td>Goldband Askon</td><td>4 811</td></tr>
+          <tr><td>6</td><td>Flachpinsel M5</td><td>3 976</td></tr>
+          <tr><td>7</td><td>Profi Feinkrepp Klebeband</td><td>3 877</td></tr>
+          <tr><td>8</td><td>Goldband HIT</td><td>3 469</td></tr>
+          <tr><td>9</td><td>Mischbecher mit Skala</td><td>3 147</td></tr>
+          <tr><td>10</td><td>Nylon-Handschuhe weiß</td><td>3 139</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h3 style="color: var(--b2c);">B2C nejprodávanější</h3>
+      <table>
+        <thead><tr><th>#</th><th>Produkt</th><th>Kusů</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Maler-Flachkrepp Askon</td><td>5 799</td></tr>
+          <tr><td>2</td><td>Farbeimer oval  ohne Deckel</td><td>4 726</td></tr>
+          <tr><td>3</td><td>Goldband HIT</td><td>4 469</td></tr>
+          <tr><td>4</td><td>Nylon-Handschuhe weiß</td><td>3 679</td></tr>
+          <tr><td>5</td><td>Cover Quick Gold / UV</td><td>3 031</td></tr>
+          <tr><td>6</td><td>Heizkörperwalze Deluxe</td><td>2 371</td></tr>
+          <tr><td>7</td><td>Goldband Askon</td><td>2 272</td></tr>
+          <tr><td>8</td><td>Heizkörperpinsel hell  ASKON</td><td>2 239</td></tr>
+          <tr><td>9</td><td>Cover Quick UV</td><td>2 070</td></tr>
+          <tr><td>10</td><td>Padschwamm mit Griff</td><td>2 068</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </section>
 
 <footer>
-  Generováno 12. 5. 2026 17:39 &middot;
+  Generováno 12. 5. 2026 18:15 &middot;
   Data: Shoptet DE export &middot; GDPR anonymizováno
 </footer>
 </div>
+<script src="sortable.js"></script>
 <script>
 
-const B2B = [{"month": "2025-05", "pocet": 87, "obrat": 20418.62}, {"month": "2025-06", "pocet": 115, "obrat": 30583.06}, {"month": "2025-07", "pocet": 151, "obrat": 37184.53}, {"month": "2025-08", "pocet": 136, "obrat": 32165.77}, {"month": "2025-09", "pocet": 135, "obrat": 38336.36}, {"month": "2025-10", "pocet": 133, "obrat": 33896.64}, {"month": "2025-11", "pocet": 142, "obrat": 36867.92}, {"month": "2025-12", "pocet": 95, "obrat": 21717.41}, {"month": "2026-01", "pocet": 148, "obrat": 34308.76}, {"month": "2026-02", "pocet": 114, "obrat": 23803.3}, {"month": "2026-03", "pocet": 166, "obrat": 45114.98}, {"month": "2026-04", "pocet": 154, "obrat": 37738.52}, {"month": "2026-05", "pocet": 44, "obrat": 9583.55}];
-const B2C = [{"month": "2025-05", "pocet": 163, "obrat": 20295.09}, {"month": "2025-06", "pocet": 205, "obrat": 31148.19}, {"month": "2025-07", "pocet": 267, "obrat": 29345.08}, {"month": "2025-08", "pocet": 270, "obrat": 31422.75}, {"month": "2025-09", "pocet": 243, "obrat": 26649.88}, {"month": "2025-10", "pocet": 237, "obrat": 31149.59}, {"month": "2025-11", "pocet": 318, "obrat": 33212.34}, {"month": "2025-12", "pocet": 230, "obrat": 24325.12}, {"month": "2026-01", "pocet": 282, "obrat": 27977.45}, {"month": "2026-02", "pocet": 196, "obrat": 25584.02}, {"month": "2026-03", "pocet": 274, "obrat": 34522.75}, {"month": "2026-04", "pocet": 233, "obrat": 31865.89}, {"month": "2026-05", "pocet": 81, "obrat": 9556.98}];
-Plotly.newPlot("b2b_monthly_chart", [
-  { x: B2B.map(d => d.month), y: B2B.map(d => d.obrat), name: "B2B obrat",
+const MB2B = [{"month": "2025-05", "obrat": 20418.62, "pocet": 87}, {"month": "2025-06", "obrat": 30583.06, "pocet": 115}, {"month": "2025-07", "obrat": 37184.53, "pocet": 151}, {"month": "2025-08", "obrat": 32165.77, "pocet": 136}, {"month": "2025-09", "obrat": 38336.36, "pocet": 135}, {"month": "2025-10", "obrat": 33896.64, "pocet": 133}, {"month": "2025-11", "obrat": 36867.92, "pocet": 142}, {"month": "2025-12", "obrat": 21717.41, "pocet": 95}, {"month": "2026-01", "obrat": 34308.76, "pocet": 148}, {"month": "2026-02", "obrat": 23803.3, "pocet": 114}, {"month": "2026-03", "obrat": 45114.98, "pocet": 166}, {"month": "2026-04", "obrat": 37738.52, "pocet": 154}, {"month": "2026-05", "obrat": 9583.55, "pocet": 44}];
+const MB2C = [{"month": "2025-05", "obrat": 20295.09, "pocet": 163}, {"month": "2025-06", "obrat": 31148.19, "pocet": 205}, {"month": "2025-07", "obrat": 29345.08, "pocet": 267}, {"month": "2025-08", "obrat": 31422.75, "pocet": 270}, {"month": "2025-09", "obrat": 26649.88, "pocet": 243}, {"month": "2025-10", "obrat": 31149.59, "pocet": 237}, {"month": "2025-11", "obrat": 33212.34, "pocet": 318}, {"month": "2025-12", "obrat": 24325.12, "pocet": 230}, {"month": "2026-01", "obrat": 27977.45, "pocet": 282}, {"month": "2026-02", "obrat": 25584.02, "pocet": 196}, {"month": "2026-03", "obrat": 34522.75, "pocet": 274}, {"month": "2026-04", "obrat": 31865.89, "pocet": 233}, {"month": "2026-05", "obrat": 9556.98, "pocet": 81}];
+const DOW = [{"den": "Po", "b2b": 298, "b2c": 516}, {"den": "\u00dat", "b2b": 354, "b2c": 491}, {"den": "St", "b2b": 325, "b2c": 486}, {"den": "\u010ct", "b2b": 309, "b2c": 438}, {"den": "P\u00e1", "b2b": 213, "b2c": 399}, {"den": "So", "b2b": 56, "b2c": 304}, {"den": "Ne", "b2b": 65, "b2c": 365}];
+const HOUR = [{"hour": 0, "b2b": 5, "b2c": 39}, {"hour": 1, "b2b": 4, "b2c": 17}, {"hour": 2, "b2b": 0, "b2c": 8}, {"hour": 3, "b2b": 1, "b2c": 5}, {"hour": 4, "b2b": 1, "b2c": 4}, {"hour": 5, "b2b": 10, "b2c": 12}, {"hour": 6, "b2b": 24, "b2c": 53}, {"hour": 7, "b2b": 89, "b2c": 122}, {"hour": 8, "b2b": 133, "b2c": 179}, {"hour": 9, "b2b": 155, "b2c": 196}, {"hour": 10, "b2b": 162, "b2c": 225}, {"hour": 11, "b2b": 153, "b2c": 195}, {"hour": 12, "b2b": 136, "b2c": 174}, {"hour": 13, "b2b": 118, "b2c": 203}, {"hour": 14, "b2b": 139, "b2c": 187}, {"hour": 15, "b2b": 143, "b2c": 209}, {"hour": 16, "b2b": 95, "b2c": 188}, {"hour": 17, "b2b": 53, "b2c": 179}, {"hour": 18, "b2b": 48, "b2c": 150}, {"hour": 19, "b2b": 41, "b2c": 159}, {"hour": 20, "b2b": 38, "b2c": 168}, {"hour": 21, "b2b": 38, "b2c": 158}, {"hour": 22, "b2b": 21, "b2c": 117}, {"hour": 23, "b2b": 13, "b2c": 52}];
+
+const LAYOUT = { paper_bgcolor: "#fff", plot_bgcolor: "#f8f9fa",
+  font: { family: "Inter, Arial", size: 12 },
+  legend: { orientation: "h", y: -0.2 } };
+
+Plotly.newPlot("monthly_chart", [
+  { x: MB2B.map(d => d.month), y: MB2B.map(d => d.obrat), name: "B2B obrat",
      type: "bar", marker: { color: "#FB8C00" } },
-  { x: B2C.map(d => d.month), y: B2C.map(d => d.obrat), name: "B2C obrat",
+  { x: MB2C.map(d => d.month), y: MB2C.map(d => d.obrat), name: "B2C obrat",
      type: "bar", marker: { color: "#2E7D32" } }
-], { paper_bgcolor: "#fff", plot_bgcolor: "#f8f9fa",
-      barmode: "stack",
-      font: { family: "Inter, Arial", size: 12 },
-      yaxis: { title: "Obrat (EUR)" },
-      legend: { orientation: "h", y: -0.2 } }, { responsive: true });
+], { ...LAYOUT, barmode: "stack", yaxis: { title: "Obrat (EUR)" } }, { responsive: true });
+
+Plotly.newPlot("dow_chart", [
+  { x: DOW.map(d => d.den), y: DOW.map(d => d.b2b), name: "B2B",
+     type: "bar", marker: { color: "#FB8C00" }, text: DOW.map(d => d.b2b), textposition: "auto" },
+  { x: DOW.map(d => d.den), y: DOW.map(d => d.b2c), name: "B2C",
+     type: "bar", marker: { color: "#2E7D32" }, text: DOW.map(d => d.b2c), textposition: "auto" }
+], { ...LAYOUT, barmode: "group", yaxis: { title: "Počet obj." } }, { responsive: true });
+
+Plotly.newPlot("hour_chart", [
+  { x: HOUR.map(d => `${String(d.hour).padStart(2,'0')}:00`), y: HOUR.map(d => d.b2b), name: "B2B",
+     type: "scatter", mode: "lines+markers", line: { color: "#FB8C00", width: 3 } },
+  { x: HOUR.map(d => `${String(d.hour).padStart(2,'0')}:00`), y: HOUR.map(d => d.b2c), name: "B2C",
+     type: "scatter", mode: "lines+markers", line: { color: "#2E7D32", width: 3 } }
+], { ...LAYOUT, yaxis: { title: "Počet obj." }, xaxis: { title: "Hodina (Berlin)" } }, { responsive: true });
 
 </script>
 </body></html>

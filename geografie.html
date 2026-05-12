@@ -71,8 +71,9 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px
 <nav class="subnav">
   <a href="index.html">📦 Orders přehled</a>
   <a href="storna.html">⛔ Storna & failed</a>
-  <a href="b2b.html">🏢 B2B detail</a>
+  <a href="b2b.html">🏢 B2B vs B2C</a>
   <a href="produkty.html">🏆 Top produkty</a>
+  <a href="kategorie.html">📦 Kategorie</a>
   <a href="geografie.html">🗺️ Geografie</a>
   <a href="mapa_bundeslander.html">🇩🇪 Mapa Bundesländer</a>
   <a href="https://patrikpilous-dev.github.io/prema-sos/" target="_blank" rel="noopener">🔍 SoS DE</a>
@@ -83,17 +84,17 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px
   <div class="kpi-grid">
     <div class="kpi">
       <div class="label">DE objednávek</div>
-      <div class="value">4 592</div>
+      <div class="value">4,592</div>
       <div class="detail">99.4 % všech valid obj.</div>
     </div>
     <div class="kpi">
       <div class="label">Non-DE obj.</div>
       <div class="value">27</div>
-      <div class="detail">5 zemí (AT  CZ  BE  LU  NL…)</div>
+      <div class="detail">5 zemí (AT, CZ, BE, LU, NL…)</div>
     </div>
     <div class="kpi">
       <div class="label">Unikátní DE města</div>
-      <div class="value">2 020</div>
+      <div class="value">2,020</div>
       <div class="detail">průměrně 2.3 obj./město</div>
     </div>
     <div class="kpi">
@@ -106,8 +107,36 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px
 
 <section>
   <h2>🇩🇪 Mapa spolkových zemí (Bundesländer)</h2>
-  <p class="muted" style="margin-bottom: 12px;">Plná mapa s 4 vrstvami (objednávky / obrat / B2B / B2C):</p>
-  <p><a href="mapa_bundeslander.html" style="color: var(--brand); font-weight: 600;">Otevřít mapu Bundesländer →</a></p>
+  <p class="muted" style="margin-bottom: 12px;">Plná interaktivní mapa s 4 vrstvami (objednávky / obrat / B2B / B2C):</p>
+  <p style="margin-bottom: 20px;"><a href="mapa_bundeslander.html" style="color: var(--brand); font-weight: 600;">Otevřít mapu Bundesländer →</a></p>
+  <h3>Tabulka všech 16 spolkových zemí (klikni hlavičku pro řazení)</h3>
+  <table>
+    <thead><tr>
+      <th>#</th><th>Spolková země</th><th data-numeric="true">Objednávek</th>
+      <th data-numeric="true">Obrat (EUR)</th>
+      <th data-numeric="true">AOV (EUR)</th>
+      <th data-numeric="true">B2B</th><th data-numeric="true">B2C</th>
+      <th data-numeric="true">B2B %</th>
+    </tr></thead>
+    <tbody>
+      <tr><td>1</td><td><b>Niedersachsen</b></td><td>811</td><td>219 742</td><td>271</td><td class="b2b">245</td><td class="b2c">566</td><td>30.2 %</td></tr>
+      <tr><td>2</td><td><b>Bayern</b></td><td>989</td><td>134 020</td><td>136</td><td class="b2b">394</td><td class="b2c">595</td><td>39.8 %</td></tr>
+      <tr><td>3</td><td><b>Nordrhein-Westfalen</b></td><td>685</td><td>86 184</td><td>126</td><td class="b2b">234</td><td class="b2c">451</td><td>34.2 %</td></tr>
+      <tr><td>4</td><td><b>Brandenburg</b></td><td>242</td><td>82 583</td><td>341</td><td class="b2b">152</td><td class="b2c">90</td><td>62.8 %</td></tr>
+      <tr><td>5</td><td><b>Baden-Württemberg</b></td><td>444</td><td>55 701</td><td>125</td><td class="b2b">131</td><td class="b2c">313</td><td>29.5 %</td></tr>
+      <tr><td>6</td><td><b>Sachsen</b></td><td>206</td><td>31 603</td><td>153</td><td class="b2b">71</td><td class="b2c">135</td><td>34.5 %</td></tr>
+      <tr><td>7</td><td><b>Berlin</b></td><td>209</td><td>31 089</td><td>149</td><td class="b2b">86</td><td class="b2c">123</td><td>41.1 %</td></tr>
+      <tr><td>8</td><td><b>Hessen</b></td><td>240</td><td>23 618</td><td>98</td><td class="b2b">61</td><td class="b2c">179</td><td>25.4 %</td></tr>
+      <tr><td>9</td><td><b>Mecklenburg-Vorpommern</b></td><td>89</td><td>15 761</td><td>177</td><td class="b2b">42</td><td class="b2c">47</td><td>47.2 %</td></tr>
+      <tr><td>10</td><td><b>Schleswig-Holstein</b></td><td>114</td><td>15 420</td><td>135</td><td class="b2b">34</td><td class="b2c">80</td><td>29.8 %</td></tr>
+      <tr><td>11</td><td><b>Rheinland-Pfalz</b></td><td>135</td><td>12 709</td><td>94</td><td class="b2b">36</td><td class="b2c">99</td><td>26.7 %</td></tr>
+      <tr><td>12</td><td><b>Bremen</b></td><td>67</td><td>11 031</td><td>165</td><td class="b2b">17</td><td class="b2c">50</td><td>25.4 %</td></tr>
+      <tr><td>13</td><td><b>Hamburg</b></td><td>102</td><td>10 170</td><td>100</td><td class="b2b">29</td><td class="b2c">73</td><td>28.4 %</td></tr>
+      <tr><td>14</td><td><b>Thüringen</b></td><td>88</td><td>9 372</td><td>106</td><td class="b2b">33</td><td class="b2c">55</td><td>37.5 %</td></tr>
+      <tr><td>15</td><td><b>Sachsen-Anhalt</b></td><td>87</td><td>7 031</td><td>81</td><td class="b2b">21</td><td class="b2c">66</td><td>24.1 %</td></tr>
+      <tr><td>16</td><td><b>Saarland</b></td><td>36</td><td>3 617</td><td>100</td><td class="b2b">7</td><td class="b2c">29</td><td>19.4 %</td></tr>
+    </tbody>
+  </table>
 </section>
 
 <section>
@@ -190,10 +219,11 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px
 </section>
 
 <footer>
-  Generováno 12. 5. 2026 17:40 &middot;
+  Generováno 12. 5. 2026 18:15 &middot;
   Data: Shoptet DE export &middot; GDPR anonymizováno
 </footer>
 </div>
+<script src="sortable.js"></script>
 <script>
 
 const PLZ = [{"billPLZ2": "26", "pocet": 299, "obrat": 85798}, {"billPLZ2": "49", "pocet": 267, "obrat": 77355}, {"billPLZ2": "95", "pocet": 236, "obrat": 44705}, {"billPLZ2": "10", "pocet": 106, "obrat": 13852}, {"billPLZ2": "27", "pocet": 95, "obrat": 45111}, {"billPLZ2": "16", "pocet": 87, "obrat": 39098}, {"billPLZ2": "15", "pocet": 86, "obrat": 31026}, {"billPLZ2": "86", "pocet": 77, "obrat": 8507}, {"billPLZ2": "48", "pocet": 74, "obrat": 27210}, {"billPLZ2": "12", "pocet": 73, "obrat": 12021}, {"billPLZ2": "45", "pocet": 70, "obrat": 8711}, {"billPLZ2": "85", "pocet": 67, "obrat": 7375}, {"billPLZ2": "28", "pocet": 67, "obrat": 11031}, {"billPLZ2": "92", "pocet": 66, "obrat": 16737}, {"billPLZ2": "91", "pocet": 62, "obrat": 6481}, {"billPLZ2": "79", "pocet": 60, "obrat": 7736}, {"billPLZ2": "14", "pocet": 59, "obrat": 11233}, {"billPLZ2": "97", "pocet": 57, "obrat": 5985}, {"billPLZ2": "88", "pocet": 54, "obrat": 12471}, {"billPLZ2": "83", "pocet": 53, "obrat": 8631}, {"billPLZ2": "08", "pocet": 52, "obrat": 17098}, {"billPLZ2": "73", "pocet": 52, "obrat": 7495}, {"billPLZ2": "59", "pocet": 52, "obrat": 3619}, {"billPLZ2": "17", "pocet": 51, "obrat": 11793}, {"billPLZ2": "01", "pocet": 51, "obrat": 3801}, {"billPLZ2": "63", "pocet": 50, "obrat": 4232}, {"billPLZ2": "21", "pocet": 50, "obrat": 5735}, {"billPLZ2": "53", "pocet": 49, "obrat": 3227}, {"billPLZ2": "06", "pocet": 48, "obrat": 3533}, {"billPLZ2": "41", "pocet": 48, "obrat": 4185}];
