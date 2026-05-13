@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>📑 Content gap analýza — Prema (i-prema.de)</title>
+<meta name="viewport" content="width=device-width  initial-scale=1.0">
+<script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+<style>
+:root {
+  --brand: #1565C0; --brand-dark: #0d3d6b; --brand-light: #90c2ed;
+  --gap-high: #c62828; --gap-medium: #FB8C00; --gap-low: #fbc02d; --covered: #2E7D32;
+  --bg: #f5f7fa; --card: #fff; --text: #1a1a2e; --muted: #5c6470;
+  --border: #e2e5ed;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Inter  -apple-system  BlinkMacSystemFont  Arial  sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.5; }
+.container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+header { background: #fff; border-bottom: 3px solid var(--brand);
+  padding: 24px 20px; margin-bottom: 24px;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+header .logo { max-height: 60px; }
+header h1 { font-size: 22px; font-weight: 700; color: var(--brand-dark); }
+nav.subnav { background: #fff; padding: 12px 20px; margin-bottom: 20px;
+  border-bottom: 1px solid var(--border); display: flex; gap: 14px; flex-wrap: wrap; }
+nav.subnav a { font-size: 13px; color: var(--muted); text-decoration: none;
+  padding: 4px 8px; border-radius: 3px; }
+nav.subnav a:hover { color: var(--brand); background: var(--brand-light); }
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit  minmax(220px  1fr));
+  gap: 12px; margin-bottom: 24px; }
+.kpi { background: var(--card); padding: 18px; border-left: 4px solid var(--brand);
+  box-shadow: 0 1px 3px rgba(0 0 0 .06); }
+.kpi .label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.kpi .value { font-size: 24px; font-weight: 700; margin-top: 4px; color: var(--brand-dark); }
+.kpi .detail { font-size: 12px; color: var(--muted); margin-top: 4px; }
+section { background: var(--card); padding: 24px; margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0 0 0 .06); }
+section h2 { font-size: 18px; font-weight: 700; color: var(--brand-dark); margin-bottom: 16px;
+  padding-bottom: 8px; border-bottom: 2px solid var(--border); }
+section h3 { font-size: 14px; font-weight: 600; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: var(--brand); color: #fff; padding: 8px 10px; text-align: left; font-weight: 600; }
+td { padding: 8px 10px; border-bottom: 1px solid var(--border); }
+tr:hover td { background: #f9fafb; }
+.tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+.tag.high { background: #ffe0e0; color: #b71c1c; }
+.tag.medium { background: #fff3e0; color: #e65100; }
+.tag.low { background: #fffde7; color: #f57f17; }
+.tag.covered { background: #e8f5e9; color: #1b5e20; }
+.muted { color: var(--muted); font-size: 12px; }
+.note { background: #fff8e1; border-left: 3px solid #ffa000; padding: 12px 16px; margin: 16px 0; font-size: 13px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div style="display:flex; align-items:center; gap:16px;">
+    <img src="https://cdn.myshoptet.com/usr/www.i-prema.de/user/logos/logo_prema-5.png" alt="Prema" class="logo">
+    <div>
+      <h1>📑 Content gap analýza</h1>
+      <div class="muted">i-prema.de vs 4 niche organic konkurenti · Ahrefs DE</div>
+    </div>
+  </div>
+  <div style="text-align:right;">
+    <a href="https://patrikpilous-dev.github.io/prema-hub/" style="color: var(--brand); font-weight: 600; text-decoration: none;">← Zpět do hubu</a><br>
+    <span class="muted" style="font-size:12px;">Snapshot V1</span>
+  </div>
+</header>
+
+<nav class="subnav">
+  <a href="index.html">📦 Orders přehled</a>
+  <a href="storna.html">⛔ Storna &amp; failed</a>
+  <a href="b2b.html">🏢 B2B vs B2C</a>
+  <a href="produkty.html">🏆 Top produkty</a>
+  <a href="kategorie.html">📦 Kategorie</a>
+  <a href="geografie.html">🗺️ Geografie</a>
+  <a href="content-gap.html" style="color:#fff; background: var(--brand); font-weight: 600;">📑 Content gap</a>
+  <a href="https://patrikpilous-dev.github.io/prema-sos/" target="_blank" rel="noopener">🔍 SoS DE</a>
+</nav>
+
+<section>
+  <h2>📊 Klíčové ukazatele</h2>
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="label">Celkem analyzovaných KW</div>
+      <div class="value">92</div>
+      <div class="detail">Top organic KW 4 niche konkurentů</div>
+    </div>
+    <div class="kpi">
+      <div class="label">KW kde Prema NErankuje</div>
+      <div class="value" style="color: var(--gap-high);">90</div>
+      <div class="detail">98 % gap rate</div>
+    </div>
+    <div class="kpi">
+      <div class="label">High-priority gap</div>
+      <div class="value" style="color: var(--gap-high);">27</div>
+      <div class="detail">vol ≥ 1000 + konkurent v top 5</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Celkový gap traffic potenciál</div>
+      <div class="value">169 500 /měs</div>
+      <div class="detail">Součet vyhledávacího objemu gap KW</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>🎯 Topic clustery — kde je největší gap</h2>
+  <div id="topic_chart" style="height: 360px;"></div>
+  <table>
+    <thead><tr>
+      <th>#</th><th>Topic cluster</th>
+      <th data-numeric="true">KW v clusteru</th>
+      <th data-numeric="true">Gap KW</th>
+      <th data-numeric="true">Gap volume /měs</th>
+    </tr></thead>
+    <tbody>
+      <tr><td>1</td><td><b>Malervlies / Raufasertapete</b></td><td>17</td><td>17</td><td>54 450</td></tr>
+      <tr><td>2</td><td><b>Tapezieren ratgeber</b></td><td>24</td><td>24</td><td>40 550</td></tr>
+      <tr><td>3</td><td><b>Holzlasur / Wetterschutz</b></td><td>7</td><td>7</td><td>19 150</td></tr>
+      <tr><td>4</td><td><b>Fassadenfarbe</b></td><td>8</td><td>8</td><td>19 070</td></tr>
+      <tr><td>5</td><td><b>Kreppband / Klebeband</b></td><td>9</td><td>9</td><td>17 500</td></tr>
+      <tr><td>6</td><td><b>Spachtel / Ardex</b></td><td>8</td><td>8</td><td>16 950</td></tr>
+      <tr><td>7</td><td><b>Wandfarbe ratgeber</b></td><td>4</td><td>4</td><td>3 750</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>📋 Plná tabulka content gap (klikni hlavičku pro řazení)</h2>
+  <p class="muted" style="margin-bottom: 12px;">Pro každé KW: kdo z konkurentů rankuje, na jaké pozici, jaký traffic mu to dává. Sloupec "Prema poz." = pokud existuje, znamená že už Prema na to rankuje (covered).</p>
+  <table>
+    <thead><tr>
+      <th>#</th><th>Keyword</th>
+      <th data-numeric="true">Volume /měs</th>
+      <th>Konkurent</th>
+      <th data-numeric="true">Konk. poz.</th>
+      <th data-numeric="true">Konk. traffic</th>
+      <th>Prema poz.</th>
+      <th>Priorita</th>
+    </tr></thead>
+    <tbody>
+      <tr><td>1</td><td><b>fassadenfarbe</b></td><td>16 000</td><td><a href="https://vietschi-farben.net/ratgeber/silikat-vs-silikonharz" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">vietschi-farben.net</a></td><td>#2</td><td>133</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>2</td><td><b>spachtel</b></td><td>11 000</td><td><a href="https://www.maler-discount24.de/spachtel-glaetter-kellen" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#4</td><td>390</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>3</td><td><b>kreppband</b></td><td>8 500</td><td><a href="https://www.maler-discount24.de/maler-kreppband" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#4</td><td>246</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>4</td><td><b>wetterschutzfarbe holz</b></td><td>4 400</td><td><a href="https://www.farbklecks24shop.de/Sortiment/Holzschutz-Holzfarben/Wetterschutzfarben/" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">farbklecks24shop.de</a></td><td>#4</td><td>320</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>5</td><td><b>abdeckvlies</b></td><td>4 100</td><td><a href="https://www.maler-discount24.de/abdeckvlies" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#2</td><td>588</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>6</td><td><b>malerkrepp</b></td><td>3 500</td><td><a href="https://www.maler-discount24.de/maler-kreppband" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#3</td><td>115</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>7</td><td><b>wetterschutzfarbe</b></td><td>2 400</td><td><a href="https://www.farbklecks24shop.de/Sortiment/Holzschutz-Holzfarben/Wetterschutzfarben/" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">farbklecks24shop.de</a></td><td>#2</td><td>359</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>8</td><td><b>glättkelle</b></td><td>2 100</td><td><a href="https://www.maler-discount24.de/glaettekellen" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#2</td><td>52</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>9</td><td><b>abtönfarbe</b></td><td>2 100</td><td><a href="https://www.farbklecks24shop.de/Sortiment/Farben/Voll-Abtoenfarben/" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">farbklecks24shop.de</a></td><td>#4</td><td>171</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>10</td><td><b>sperrgrund</b></td><td>1 900</td><td><a href="https://www.farbklecks24shop.de/Sortiment/Lacke/Sperrgrund-Isoliergrund/" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">farbklecks24shop.de</a></td><td>#4</td><td>175</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>11</td><td><b>sockelfarbe anthrazit</b></td><td>1 900</td><td><a href="https://www.farbklecks24shop.de/Farbklecks24-Dach-und-Sockelfarbe-5L-Dispersionsfarbe" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">farbklecks24shop.de</a></td><td>#4</td><td>141</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>12</td><td><b>vlies rauhfaser</b></td><td>1 900</td><td><a href="https://www.farbklecks24shop.de/Erfurt-Vlies-Rauhfaser-52-75-Pro-Grob-Rolle-weiss" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">farbklecks24shop.de</a></td><td>#4</td><td>110</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>13</td><td><b>ardex a 828</b></td><td>1 900</td><td><a href="https://vietschi-farben.net/hersteller/ardex/26012/ardex-a-828" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">vietschi-farben.net</a></td><td>#3</td><td>98</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>14</td><td><b>vliestapete kleben</b></td><td>1 800</td><td><a href="https://www.metylan.de/anleitung-tapezieren/.../vliestapete-kleben.html" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">metylan.de</a></td><td>#5</td><td>164</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>15</td><td><b>tapetenlöser</b></td><td>1 600</td><td><a href="https://www.metylan.de/products/.../metylan-aktiv-tapetenablser.html" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">metylan.de</a></td><td>#3</td><td>150</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>16</td><td><b>decke tapezieren</b></td><td>1 500</td><td><a href="https://www.metylan.de/anleitung-tapezieren/.../decke-tapezieren.html" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">metylan.de</a></td><td>#3</td><td>239</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>17</td><td><b>cuttermesser klingen</b></td><td>1 400</td><td><a href="https://www.maler-discount24.de/Cuttermesser-Klingen-1x-Koecher-10-Stueck-18mm" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#3</td><td>51</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>18</td><td><b>owatrol rostumwandler</b></td><td>1 400</td><td><a href="https://www.farbklecks24shop.de/Owatrol-OEl-versch.-Groessen-Kriechoel-Rostkonservierer-Lackadditiv" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">farbklecks24shop.de</a></td><td>#4</td><td>144</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>19</td><td><b>abklebeband</b></td><td>1 300</td><td><a href="https://www.maler-discount24.de/premium-malerband-abklebeband-goldband" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#3</td><td>96</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>20</td><td><b>vliestapete streichen</b></td><td>1 200</td><td><a href="https://www.metylan.de/anleitung-tapezieren/.../vliestapete-streichen-tipps-und-anleitung.html" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">metylan.de</a></td><td>#1</td><td>927</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>21</td><td><b>ardex 828</b></td><td>1 200</td><td><a href="https://vietschi-farben.net/hersteller/ardex/26012/ardex-a-828" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">vietschi-farben.net</a></td><td>#2</td><td>197</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>22</td><td><b>glattvlies</b></td><td>1 200</td><td><a href="https://vietschi-farben.net/hersteller/vietschi/24705/vietschi-glattvlies-150" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">vietschi-farben.net</a></td><td>#3</td><td>108</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>23</td><td><b>malerkreppband</b></td><td>1 000</td><td><a href="https://www.maler-discount24.de/maler-kreppband" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#1</td><td>763</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>24</td><td><b>malerband</b></td><td>1 000</td><td><a href="https://www.maler-discount24.de/maler-kreppband" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#2</td><td>93</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>25</td><td><b>raufaser reparatur</b></td><td>1 000</td><td><a href="https://www.metylan.de/anleitung-tapezieren/.../raufaser-reparatur.html" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">metylan.de</a></td><td>#1</td><td>312</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>26</td><td><b>dickschichtlasur</b></td><td>1 000</td><td><a href="https://www.farbklecks24shop.de/Sortiment/Holzschutz-Holzfarben/Holzlasuren/Dickschichtlasuren/" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">farbklecks24shop.de</a></td><td>#1</td><td>489</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>27</td><td><b>was ist dispersionsfarbe</b></td><td>1 000</td><td><a href="https://vietschi-farben.net/ratgeber/dispersionsfarbe-was-bedeutet-dispersion" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">vietschi-farben.net</a></td><td>#4</td><td>67</td><td>—</td><td><span class="tag high">high</span></td></tr>
+      <tr><td>28</td><td><b>malervlies</b></td><td>20 000</td><td><a href="https://www.maler-discount24.de/Malervlies-Makulaturvlies-Glattvlies-Renoviervlies" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#12</td><td>151</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>29</td><td><b>raufasertapete</b></td><td>16 000</td><td><a href="https://www.metylan.de/anleitung-tapezieren/.../raufasertapete-streichen.html" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">metylan.de</a></td><td>#15</td><td>83</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>30</td><td><b>holzlasur außen</b></td><td>6 600</td><td><a href="https://www.farbklecks24shop.de/Sortiment/Holzschutz-Holzfarben/Holzlasuren/" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">farbklecks24shop.de</a></td><td>#6</td><td>347</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>31</td><td><b>holzschutzlasur</b></td><td>4 400</td><td><a href="https://www.farbklecks24shop.de/Sortiment/Holzschutz-Holzfarben/Holzlasuren/" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">farbklecks24shop.de</a></td><td>#11</td><td>68</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>32</td><td><b>malervlies tapete</b></td><td>4 100</td><td><a href="https://www.maler-discount24.de/Malervlies-Makulaturvlies-Glattvlies-Renoviervlies" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#12</td><td>40</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>33</td><td><b>tapezieren</b></td><td>3 800</td><td><a href="https://www.metylan.de/anleitung-tapezieren/.../richtig-tapezieren.html" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">metylan.de</a></td><td>#12</td><td>58</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>34</td><td><b>baumwollhandschuhe</b></td><td>3 500</td><td><a href="https://www.maler-discount24.de/baumwollhandschuhe-premium" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#13</td><td>50</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>35</td><td><b>schleifschwamm</b></td><td>2 500</td><td><a href="https://www.maler-discount24.de/schleifschwamm-schleifklotz" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#7</td><td>32</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>36</td><td><b>elefantenhaut farbe</b></td><td>2 500</td><td><a href="https://www.metylan.de/anleitung-tapezieren/.../elefantenhaut-streichen.html" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">metylan.de</a></td><td>#8</td><td>132</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>37</td><td><b>brunox rostumwandler</b></td><td>1 900</td><td><a href="https://www.farbklecks24shop.de/Brunox-Epoxy-Rostumwandler-Rostschutz-Korrosionsschutz" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">farbklecks24shop.de</a></td><td>#6</td><td>113</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>38</td><td><b>malerrolle</b></td><td>1 600</td><td><a href="https://www.maler-discount24.de/profi-farbroller-heizkoerperwalze-malerrolle-topline-10cm" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#6</td><td>37</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>39</td><td><b>spachteltechnik wand</b></td><td>1 400</td><td><a href="https://vietschi-farben.net/ratgeber/spachteltechnik-wand-verputzen" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">vietschi-farben.net</a></td><td>#12</td><td>18</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>40</td><td><b>reibeputz außen</b></td><td>1 200</td><td><a href="https://vietschi-farben.net/hersteller/dinova/25280/dinova-reibeputz-aussen" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">vietschi-farben.net</a></td><td>#10</td><td>21</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>41</td><td><b>malerfolie</b></td><td>900</td><td><a href="https://www.maler-discount24.de/profi-abdeckfolie-malerfolie-malerplane-20qm-staerke-30my" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#4</td><td>34</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>42</td><td><b>elefantenhaut streichen</b></td><td>900</td><td><a href="https://www.metylan.de/anleitung-tapezieren/.../elefantenhaut-ueberstreichen.html" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">metylan.de</a></td><td>#1</td><td>227</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>43</td><td><b>goldband klebeband</b></td><td>800</td><td><a href="https://www.maler-discount24.de/profi-malerband-abklebeband-goldband-19mm-50mm" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#4</td><td>53</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>44</td><td><b>kleister entsorgen</b></td><td>800</td><td><a href="https://www.metylan.de/anleitung-tapezieren/.../kleister-entsorgen.html" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">metylan.de</a></td><td>#1</td><td>478</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>45</td><td><b>raufasertapete ausbessern</b></td><td>800</td><td><a href="https://www.metylan.de/anleitung-tapezieren/.../raufaser-reparatur.html" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">metylan.de</a></td><td>#1</td><td>114</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>46</td><td><b>silikatfarbe außen</b></td><td>800</td><td><a href="https://vietschi-farben.net/farben/fassadenfarben/silikatfarben-fuer-aussen/" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">vietschi-farben.net</a></td><td>#7</td><td>31</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>47</td><td><b>abdeckfolie mit klebeband</b></td><td>700</td><td><a href="https://www.maler-discount24.de/klebeband-mit-folie" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#3</td><td>85</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>48</td><td><b>isolierspray</b></td><td>700</td><td><a href="https://www.maler-discount24.de/Isolierspray-Fleckenspray-Isolierfarbe-400ml-weiss" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#3</td><td>50</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>49</td><td><b>malerpinsel</b></td><td>700</td><td><a href="https://www.maler-discount24.de/pinsel-flaechenstreicher" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#3</td><td>40</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>50</td><td><b>raufasertapete streichen</b></td><td>700</td><td><a href="https://www.metylan.de/anleitung-tapezieren/.../raufasertapete-streichen.html" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">metylan.de</a></td><td>#2</td><td>174</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>51</td><td><b>laminat auf teppich verlegen</b></td><td>700</td><td><a href="https://www.farbklecks24shop.de/ratgeber/laminat-auf-teppich-verlegen/" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">farbklecks24shop.de</a></td><td>#2</td><td>791</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>52</td><td><b>tapetenkleister entsorgen</b></td><td>600</td><td><a href="https://www.metylan.de/anleitung-tapezieren/.../kleister-entsorgen.html" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">metylan.de</a></td><td>#1</td><td>625</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>53</td><td><b>raufasertapete reparieren</b></td><td>600</td><td><a href="https://www.metylan.de/anleitung-tapezieren/.../raufaser-reparatur.html" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">metylan.de</a></td><td>#3</td><td>83</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>54</td><td><b>moltofill innen</b></td><td>600</td><td><a href="https://www.farbklecks24shop.de/Molto-Innen-Reparatur-Moltofill-Fertigspachtel-Spachtelmasse" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">farbklecks24shop.de</a></td><td>#4</td><td>40</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>55</td><td><b>silikonharz fassadenfarbe</b></td><td>600</td><td><a href="https://www.farbklecks24shop.de/Sortiment/Farben/Fassadenfarbe/Siliconharzfassadenfarben/" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">farbklecks24shop.de</a></td><td>#5</td><td>28</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>56</td><td><b>kreppband kaufen</b></td><td>500</td><td><a href="https://www.maler-discount24.de/maler-kreppband" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#2</td><td>60</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>57</td><td><b>rapport tapete</b></td><td>500</td><td><a href="https://www.metylan.de/anleitung-tapezieren/.../mustertapete-kleben.html" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">metylan.de</a></td><td>#5</td><td>47</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>58</td><td><b>silikon fassadenfarbe</b></td><td>500</td><td><a href="https://www.farbklecks24shop.de/Sortiment/Farben/Fassadenfarbe/Siliconharzfassadenfarben/" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">farbklecks24shop.de</a></td><td>#3</td><td>57</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>59</td><td><b>stachelwalze tapete</b></td><td>500</td><td><a href="https://www.farbklecks24shop.de/Tapeten-Stachelwalze-15cm-50-98cm-Teleskop-Alustiel-Nagelwalze-Tapetenigel" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">farbklecks24shop.de</a></td><td>#4</td><td>32</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>60</td><td><b>beste fassadenfarbe</b></td><td>500</td><td><a href="https://vietschi-farben.net/ratgeber/silikat-vs-silikonharz" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">vietschi-farben.net</a></td><td>#2</td><td>75</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>61</td><td><b>ecken tapezieren</b></td><td>450</td><td><a href="https://www.metylan.de/anleitung-tapezieren/.../ecken-tapezieren.html" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">metylan.de</a></td><td>#3</td><td>79</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>62</td><td><b>wie lange trocknet wandfarbe</b></td><td>450</td><td><a href="https://www.farbklecks24shop.de/ratgeber/wie-lange-braucht-wandfarbe-zum-trocknen/" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">farbklecks24shop.de</a></td><td>#1</td><td>145</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>63</td><td><b>schönox rdf</b></td><td>450</td><td><a href="https://vietschi-farben.net/hersteller/schoenox/23547/schoenox-rdf" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">vietschi-farben.net</a></td><td>#2</td><td>53</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>64</td><td><b>vliestapete überstreichen</b></td><td>400</td><td><a href="https://www.metylan.de/anleitung-tapezieren/.../vliestapete-streichen.html" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">metylan.de</a></td><td>#1</td><td>331</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>65</td><td><b>elefantenhaut überstreichen</b></td><td>400</td><td><a href="https://www.metylan.de/anleitung-tapezieren/.../elefantenhaut-ueberstreichen.html" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">metylan.de</a></td><td>#1</td><td>259</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>66</td><td><b>dachschräge tapezieren</b></td><td>400</td><td><a href="https://www.metylan.de/anleitung-tapezieren/.../dachschraege-tapezieren.html" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">metylan.de</a></td><td>#2</td><td>84</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>67</td><td><b>nahtkleber tapete</b></td><td>300</td><td><a href="https://www.metylan.de/anleitung-tapezieren/.../nahtkleber-mit-reparaturkleber.html" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">metylan.de</a></td><td>#1</td><td>101</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>68</td><td><b>reinacrylat fassadenfarbe</b></td><td>300</td><td><a href="https://www.farbklecks24shop.de/Sortiment/Farben/Fassadenfarbe/Reinacrylatfarben/" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">farbklecks24shop.de</a></td><td>#1</td><td>91</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>69</td><td><b>welche fassadenfarbe ist die beste</b></td><td>300</td><td><a href="https://vietschi-farben.net/ratgeber/silikat-vs-silikonharz" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">vietschi-farben.net</a></td><td>#2</td><td>147</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>70</td><td><b>was ist malervlies</b></td><td>300</td><td><a href="https://vietschi-farben.net/ratgeber/raufaser-malervlies" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">vietschi-farben.net</a></td><td>#1</td><td>99</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>71</td><td><b>malerplane</b></td><td>250</td><td><a href="https://www.maler-discount24.de/profi-abdeckfolie-malerfolie-malerplane-20qm-staerke-30my" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#1</td><td>115</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>72</td><td><b>farbrolle reinigen</b></td><td>250</td><td><a href="https://vietschi-farben.net/ratgeber/farbwalzen-reinigen-farbrolle-reinigen" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">vietschi-farben.net</a></td><td>#3</td><td>41</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>73</td><td><b>klebeband mit folie</b></td><td>200</td><td><a href="https://www.maler-discount24.de/klebeband-mit-folie" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#1</td><td>65</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>74</td><td><b>fassadenroller</b></td><td>200</td><td><a href="https://www.maler-discount24.de/fassadenroller-farbroller-malerrolle-27cm-mit-buegel" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#1</td><td>64</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>75</td><td><b>kleister anrühren</b></td><td>200</td><td><a href="https://www.metylan.de/anleitung-tapezieren/.../kleister-anruehren.html" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">metylan.de</a></td><td>#1</td><td>105</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>76</td><td><b>mittelschichtlasur</b></td><td>200</td><td><a href="https://www.farbklecks24shop.de/Sortiment/Holzschutz-Holzfarben/Holzlasuren/Mittelschichtlasuren/" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">farbklecks24shop.de</a></td><td>#1</td><td>206</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>77</td><td><b>wandfarbe vom boden entfernen</b></td><td>200</td><td><a href="https://www.farbklecks24shop.de/ratgeber/wandfarbe-vom-boden-entfernen-das-hilft/" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">farbklecks24shop.de</a></td><td>#1</td><td>116</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>78</td><td><b>ardex rf</b></td><td>200</td><td><a href="https://www.farbklecks24shop.de/Ardex-RF-Kartuschenspachtel-310ml-Fugenspachtel" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">farbklecks24shop.de</a></td><td>#2</td><td>28</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>79</td><td><b>ardex a 828 comfort</b></td><td>200</td><td><a href="https://vietschi-farben.net/hersteller/ardex/26013/ardex-a-828-comfort" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">vietschi-farben.net</a></td><td>#2</td><td>28</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>80</td><td><b>herbol zenit power</b></td><td>200</td><td><a href="https://vietschi-farben.net/hersteller/herbol/23000/herbol-zenit-power" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">vietschi-farben.net</a></td><td>#2</td><td>24</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>81</td><td><b>malervlies nachteile</b></td><td>200</td><td><a href="https://vietschi-farben.net/ratgeber/raufaser-malervlies" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">vietschi-farben.net</a></td><td>#1</td><td>22</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>82</td><td><b>tapetenkleister anrühren</b></td><td>150</td><td><a href="https://www.metylan.de/anleitung-tapezieren/.../kleister-anruehren.html" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">metylan.de</a></td><td>#1</td><td>46</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>83</td><td><b>mineralische farbe innen</b></td><td>150</td><td><a href="https://www.farbklecks24shop.de/Sortiment/Farben/Innenfarben/Silikatfarben/" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">farbklecks24shop.de</a></td><td>#1</td><td>38</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>84</td><td><b>kältebrücke wand</b></td><td>150</td><td><a href="https://vietschi-farben.net/ratgeber/farben-gegen-kaeltebruecken" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">vietschi-farben.net</a></td><td>#1</td><td>49</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>85</td><td><b>unterschied lasur und lack</b></td><td>150</td><td><a href="https://vietschi-farben.net/ratgeber/unterschied-lasur-oder-lack" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">vietschi-farben.net</a></td><td>#2</td><td>47</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>86</td><td><b>treppengeländer streichen holz</b></td><td>80</td><td><a href="https://vietschi-farben.net/ratgeber/treppengelaender-streichen" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">vietschi-farben.net</a></td><td>#1</td><td>33</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>87</td><td><b>malervlies vs rauhfaser</b></td><td>80</td><td><a href="https://vietschi-farben.net/ratgeber/raufaser-malervlies" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">vietschi-farben.net</a></td><td>#1</td><td>28</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>88</td><td><b>malervlies oder raufaser</b></td><td>70</td><td><a href="https://vietschi-farben.net/ratgeber/raufaser-malervlies" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">vietschi-farben.net</a></td><td>#1</td><td>27</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>89</td><td><b>rissüberbrückende fassadenfarbe</b></td><td>70</td><td><a href="https://vietschi-farben.net/farben/fassadenfarben/rissueberbrueckende-farben/" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">vietschi-farben.net</a></td><td>#1</td><td>22</td><td>—</td><td><span class="tag medium">medium</span></td></tr>
+      <tr><td>90</td><td><b>stockflecken tapete</b></td><td>350</td><td><a href="https://www.metylan.de/anleitung-tapezieren/.../schimmel-entfernen.html" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">metylan.de</a></td><td>#4</td><td>46</td><td>—</td><td><span class="tag low">low</span></td></tr>
+      <tr><td>91</td><td><b>isolierfarbe</b></td><td>3 000</td><td><a href="https://www.farbklecks24shop.de/Sortiment/Farben/Innenfarben/Isolierfarben/" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">farbklecks24shop.de</a></td><td>#3</td><td>376</td><td>#11</td><td><span class="tag covered">covered</span></td></tr>
+      <tr><td>92</td><td><b>malerbedarf</b></td><td>1 800</td><td><a href="https://www.maler-discount24.de/" target="_blank" rel="noopener" style="color: var(--brand); font-size: 11px;">maler-discount24.de</a></td><td>#4</td><td>108</td><td>#12</td><td><span class="tag covered">covered</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>💡 Interpretace — co s gap dělat</h2>
+  <p>Content gap analýza ukazuje, kde má Prema slepá místa v SEO portfoliu. Z dat plyne <b>4 strategické závěry</b>:</p>
+
+  <h3 style="color: var(--gap-high);">1. Tapezieren / kleister cluster — chybí kompletně</h3>
+  <p>Metylan.de drží <b>23 KW na top 5 pozicích</b> jen kolem tapetování (vliestapete streichen, kleister entsorgen, elefantenhaut, raufaser reparatur). Souhrnný měsíční objem těchto KW je <b>10 000+</b> a Prema na 99 % z nich neranking. Metylan to nemá náhodou — má samostatný <b>blogový hub /anleitung-tapezieren/</b> s 30+ návody. <b>Doporučení:</b> postavit obdobný blog hub na i-prema.de — 10-15 článků „Tapezieren Schritt für Schritt", „Vliestapete streichen", „Raufaser reparieren", „Kleister anrühren". Roční ROI: cca <b>1 000–2 500 návštěv/měsíc navíc</b> jen z tohoto clusteru. Velký překryv se sortimentem (tapetenkleister, kleisterspritze, fertig-tapetenkleister už Prema má).</p>
+
+  <h3 style="color: var(--gap-high);">2. Malervlies / Raufasertapete — produktové ranking</h3>
+  <p>Maler-discount24.de drží „malervlies" (20 000 vol, pozice 12), „abdeckvlies" (4 100 vol, pozice 2). Prema má v sortimentu malervlies, ale jen 1 produktová stránka bez podstránek per typ (Makulatur, Glatt, Renoviervlies). <b>Doporučení:</b> rozbít „/malervlies/" kategorii na 3 podstránky (Glattvlies, Renoviervlies, Makulatur), každá s unique URL, unique title a krátkým textem o použití. Plus blogový článek „Malervlies oder Raufaser — was ist besser?" (Vietschi má, 200 vol, pozice 1).</p>
+
+  <h3 style="color: var(--gap-medium);">3. Fassadenfarbe / Holzlasur — ne sortiment Premy</h3>
+  <p>Farbklecks24shop.de drží „holzlasur außen" (6 600 vol), „wetterschutzfarbe" (2 400 vol), „silikon fassadenfarbe" (500 vol). To je <b>jiný produktový segment</b> (barvy a fasády vs. nářadí), kde Prema nemá produkty. <b>Nemá smysl o tyto KW soutěžit produkty</b> — ale dává smysl edukační obsah (porovnávací článek „Was ist der Unterschied zwischen Dispersionsfarbe und Silikatfarbe?" generuje traffic, kompenzuje absencí produktů). Případně partnerství / affiliate na úroveň blogu.</p>
+
+  <h3 style="color: var(--covered);">4. Co Prema dělá dobře — z čeho navázat</h3>
+  <p>Prema má <b>17 KW na top 5 pozicích</b> (gefilzter putz #1, schwarzes toilettenpapier #4, farbeimer #5, kleisterspritze #5, japan spachtel #5, ...). Blogová strategie funguje — „blog/konkurrenz-fur-den-reibeputz" jsem viděl jako top stránku (426 traffic, 27 677 EUR value). <b>Doporučení:</b> aplikovat stejný pattern (long-tail blog + interní link na produkt) na další oblasti, kde Prema má produkty ale slabou SEO viditelnost: cuttermesser klingen (10 000+ vol, různé varianty), schleifschwamm (2 500 vol), abdeckvlies, isolierspray. Každý článek 800–1500 slov, FAQ schema, link do produktu.</p>
+</section>
+
+<footer>
+  Generováno {__import__("pandas").Timestamp.now().strftime("%#d. %#m. %Y %H:%M")} &middot;
+  Data: Ahrefs DE (4 konkurenti: maler-discount24, metylan, farbklecks24shop, vietschi-farben) &middot;
+  Snapshot V1 — bez historie
+</footer>
+</div>
+<script src="sortable.js"></script>
+<script>
+const TOPICS = {json.dumps(topic_stats)};
+Plotly.newPlot("topic_chart", [{{
+  x: TOPICS.map(t => t.topic),
+  y: TOPICS.map(t => t.vol_gap),
+  type: "bar",
+  marker: {{ color: TOPICS.map(t => t.vol_gap >= 5000 ? "#c62828" : t.vol_gap >= 1000 ? "#FB8C00" : "#fbc02d") }},
+  text: TOPICS.map(t => `${{t.n_gap}} KW`),
+  textposition: "outside",
+  hovertemplate: "<b>%{{x}}</b><br>%{{customdata}} gap KW<br>%{{y:,}} /měs volume<extra></extra>",
+  customdata: TOPICS.map(t => t.n_gap),
+}}], {{
+  paper_bgcolor: "#fff", plot_bgcolor: "#f8f9fa",
+  font: {{ family: "Inter, Arial", size: 12 }},
+  yaxis: {{ title: "Měsíční search volume nesplněný" }},
+  xaxis: {{ tickangle: -20 }},
+  margin: {{ t: 30, r: 20, b: 100, l: 70 }}
+}}, {{ responsive: true }});
+</script>
+</body></html>

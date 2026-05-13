@@ -76,6 +76,7 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px
   <a href="kategorie.html">📦 Kategorie</a>
   <a href="geografie.html">🗺️ Geografie</a>
   <a href="mapa_bundeslander.html">🇩🇪 Mapa Bundesländer</a>
+  <a href="content-gap.html">📑 Content gap</a>
   <a href="https://patrikpilous-dev.github.io/prema-sos/" target="_blank" rel="noopener">🔍 SoS DE</a>
 </nav>
 
@@ -128,14 +129,14 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px
 </section>
 
 <footer>
-  Generováno 12. 5. 2026 18:15 &middot;
+  Generováno 13. 5. 2026 12:13 &middot;
   Data: Shoptet DE export &middot; GDPR anonymizováno
 </footer>
 </div>
 <script src="sortable.js"></script>
 <script>
 
-const CM = [{"month": "2025-05", "pocet": 17, "obrat": 0.0}, {"month": "2025-06", "pocet": 22, "obrat": 0.0}, {"month": "2025-07", "pocet": 32, "obrat": 0.0}, {"month": "2025-08", "pocet": 26, "obrat": 0.0}, {"month": "2025-09", "pocet": 23, "obrat": 0.0}, {"month": "2025-10", "pocet": 25, "obrat": 0.0}, {"month": "2025-11", "pocet": 33, "obrat": 0.0}, {"month": "2025-12", "pocet": 24, "obrat": 0.0}, {"month": "2026-01", "pocet": 33, "obrat": 0.0}, {"month": "2026-02", "pocet": 14, "obrat": 0.0}, {"month": "2026-03", "pocet": 26, "obrat": 0.0}, {"month": "2026-04", "pocet": 19, "obrat": 0.0}, {"month": "2026-05", "pocet": 2, "obrat": 0.0}];
+const CM = [{"mon_num": 5, "pocet": 19, "obrat": 0.0, "month": "Kv\u011b"}, {"mon_num": 6, "pocet": 22, "obrat": 0.0, "month": "\u010cvn"}, {"mon_num": 7, "pocet": 32, "obrat": 0.0, "month": "\u010cvc"}, {"mon_num": 8, "pocet": 26, "obrat": 0.0, "month": "Srp"}, {"mon_num": 9, "pocet": 23, "obrat": 0.0, "month": "Z\u00e1\u0159"}, {"mon_num": 10, "pocet": 25, "obrat": 0.0, "month": "\u0158\u00edj"}, {"mon_num": 11, "pocet": 33, "obrat": 0.0, "month": "Lis"}, {"mon_num": 12, "pocet": 24, "obrat": 0.0, "month": "Pro"}, {"mon_num": 1, "pocet": 33, "obrat": 0.0, "month": "Led"}, {"mon_num": 2, "pocet": 14, "obrat": 0.0, "month": "\u00dano"}, {"mon_num": 3, "pocet": 26, "obrat": 0.0, "month": "B\u0159e"}, {"mon_num": 4, "pocet": 19, "obrat": 0.0, "month": "Dub"}];
 Plotly.newPlot("cancel_monthly_chart", [
   { x: CM.map(d => d.month), y: CM.map(d => d.pocet), type: "bar",
      marker: { color: "#c62828" }, name: "Storno počet",
